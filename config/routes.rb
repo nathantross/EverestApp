@@ -1,5 +1,5 @@
 EverestApp::Application.routes.draw do
-root :to "session#new"
+root :to => "session#new"
   get "user/index"
   get "goal/index"
   get "goal/new"
