@@ -10,7 +10,7 @@ EverestApp::Application.routes.draw do
   get "goal/delete"
 
 
-get   '/login', :to => 'sessions#new', :as => :login
+get '/login', :to => 'sessions#new', :as => :login
 get '/auth/:provider/callback', :to => 'sessions#create'
 get '/auth/failure', :to => 'sessions#failure'
 get '/logout', :to => 'sessions#destroy'
