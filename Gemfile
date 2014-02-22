@@ -31,4 +31,11 @@ group :development, :test do
   gem 'pry'
   gem 'rspec-rails'
   gem 'dotenv-rails'
+  gem 'quiet_assets'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+  gem 'awesome_print'
+  gem 'pry-rails'
+  gem 'pry-byebug'
 end
