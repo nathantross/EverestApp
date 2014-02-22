@@ -25,6 +25,7 @@ gem 'handlebars_assets'
 gem 'fitgem'
 gem 'omniauth-fitbit'
 
+gem 'rails_12factor', :group => :production
 
 group :development, :test do
   gem 'pry'
