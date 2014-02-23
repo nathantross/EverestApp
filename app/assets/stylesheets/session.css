@@ -1,0 +1,17 @@
+.headline {
+  font-family: 'Bowlby One', Arial, sans-serif; font-weight: 400; 
+  font-size: 60px;
+}
+
+
+
+body {
+
+
+  background: url(http://www.ppt-backgrounds.net/wp-content/uploads/2012/11/Mountain-and-Forest-Powerpoint-Backgrounds.png) no-repeat center center fixed;
+  background-color: rgba(107, 173, 178, 1);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

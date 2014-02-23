@@ -11,3 +11,14 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+  background-color: rgba(107, 173, 178, 1);
+}
+
+.btn-primary {
+  /*background-color: rgba(178, 126, 89, 1);*/
+  border-radius: 0px;
+  border: 0;
+  padding: 20px;
+}
