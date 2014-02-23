@@ -1,0 +1,29 @@
+.headline {
+  font-family: 'Bowlby One', Arial, sans-serif; font-weight: 400; 
+  font-size: 60px;
+}
+
+body {
+  background: url('mountain.png') no-repeat center center fixed;
+  background-color: rgba(184, 219, 255, 1);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.fitbitLogo {
+  background: url('fitbit_connect.png') no-repeat;
+  opacity: 0.95;
+  padding-left: 141px;
+  padding-right: 141px;
+  margin-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+
+
+.fitbitLogo:hover {
+  opacity: 1;
+}

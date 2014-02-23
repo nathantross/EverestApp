@@ -11,3 +11,21 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+  background-color: rgba(184, 219, 255, 1);
+}
+
+.btn-primary {
+
+  border-radius: 80px;
+  border: 0;
+  padding: 18px;
+}
+
+
+footer .navbar-fixed-bottom {
+  background-color: rgba(255, 255, 255, 1);
+  margin-bottom: -10px;
+  padding-top: 20px;
+}
