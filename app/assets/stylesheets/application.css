@@ -13,12 +13,20 @@
  */
 
 body {
-  background-color: rgba(107, 173, 178, 1);
+  background-color: rgba(184, 219, 255, 1);
 }
 
 .btn-primary {
-  /*background-color: rgba(178, 126, 89, 1);*/
-  border-radius: 0px;
+
+  border-radius: 80px;
   border: 0;
-  padding: 20px;
+  padding: 18px;
+  padding-left:;
+}
+
+
+footer .navbar-fixed-bottom {
+  background-color: rgba(999, 999, 999, 1);
+  margin-bottom: -10px;
+  padding-top: 20px;
 }

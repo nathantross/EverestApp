@@ -3,15 +3,28 @@
   font-size: 60px;
 }
 
-
-
 body {
-
-
-  background: url(http://www.ppt-backgrounds.net/wp-content/uploads/2012/11/Mountain-and-Forest-Powerpoint-Backgrounds.png) no-repeat center center fixed;
-  background-color: rgba(107, 173, 178, 1);
+  background: url('mountain.png') no-repeat center center fixed;
+  background-color: rgba(184, 219, 255, 1);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+.fitbitLogo {
+  background: url('fitbit_connect.png') no-repeat;
+  opacity: 0.95;
+  padding-left: 141px;
+  padding-right: 141px;
+  margin-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+
+
+.fitbitLogo:hover {
+  opacity: 1;
+  border: 40px;
 }
