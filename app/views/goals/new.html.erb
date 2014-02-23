@@ -1,2 +1,9 @@
-<h1>Goal#new</h1>
-<p>Find me in app/views/goal/new.html.erb</p>
+<h1>New Goal</h1>
+
+<%= form_for @goal do |f| %>
+  <%= f.label :name %></br>
+  <%= f.text_field :name %></br></br>
+  <%= f.label :distance %></br>
+  <%= f.text_field :distance %> feet</br></br>
+  <%= f.submit 'Submit' %></br>
+<% end %>
