@@ -8,6 +8,7 @@ describe User do
   it "is invalid without a uid"
   it "is invalid without an oauth_token"
   it "is invalid without an oauth_secret"
+  it "is invalid with a duplicate email address"
   it "returns a contact's full name as a string"
 end
 
