@@ -6,7 +6,7 @@ describe User do
       name: "Jane EverestClimber",
       email: "jane@example.com",
       provider: "fitbit",
-      uid: "s9f93k4j5jf9",
+      uid: "wnd84jr92bdk",
       oauth_token: "2j5jf93jd84kf94",
       oauth_secret: "3j8dn48rj58xn40")
     expect(user).to be_valid
@@ -36,22 +36,40 @@ describe User do
     expect(User.new(oauth_secret: nil)).to have(1).errors_on(:oauth_secret)
   end
 
-  it "is invalid with a duplicate email address" do
-    user_jane = User.create(
-      name: "Jane EverestClimber",
-      email: "user@example.com",
-      provider: "fitbit",
-      uid: "s9f93k4j5jf9",
-      oauth_token: "2j5jf93jd84kf94",
-      oauth_secret: "3j8dn48rj58xn40")
-    user_joe = User.create(
-      name: "Joe EverestClimber",
-      email: "user@example.com",
-      provider: "fitbit",
-      uid: "s9f93k4j5jf9",
-      oauth_token: "2j5jf93jd84kf94",
-      oauth_secret: "3j8dn48rj58xn40")
-    expect(user_joe).to have(1).errors_on(:email)
+  describe "invalidate duplicate fields" do
+    before :each do
+      @user_jane = User.create(
+        name: "Jane EverestClimber",
+        email: "user@example.com",
+        provider: "fitbit",
+        uid: "s9f93k4j5jf9",
+        oauth_token: "2j5jf93jd84kf94",
+        oauth_secret: "3j8dn48rj58xn40")
+
+      @user_joe = User.create(
+        name: "Joe EverestClimber",
+        email: "user@example.com",
+        provider: "fitbit",
+        uid: "3n5nsn58dj5m",
+        oauth_token: "2n58dn47em48dj3",
+        oauth_secret: "2n58dn37szm5yxb")
+
+      @user_jill = User.create(
+        name: "Jill EverestClimber",
+        email: "jill@example.com",
+        provider: "fitbit",
+        uid: "s9f93k4j5jf9",
+        oauth_token: "2n3n4md74gsjfdm",
+        oauth_secret: "4nt8dk5lfba62h4")
+    end
+
+    it "is invalid with a duplicate email address" do
+      expect(@user_joe).to have(1).errors_on(:email)
+    end
+
+    it "is invalid with a duplicate uid" do
+      expect(@user_jill).to have(1).errors_on(:uid)
+    end
   end
 
   it "returns a contact's full name as a string" do
@@ -64,7 +82,6 @@ describe User do
       oauth_secret: "3j8dn48rj58xn40")
     expect(user.name).to eq "Testy McTesterson"
   end
-
 end
 
 
