@@ -5,6 +5,66 @@
 <br>
 
 <div class="container">
+
+<h1 class="headline text-center"> Everest Users </h1>
+
+
+
+  <!-- Begin User Profile Section -->
+  <% @users.each do |user| %>
+
+  <!-- Adding in Line Split -->
+  <div class="row">
+    <div class="col-xs-2">
+    </div>
+    <div class="col-xs-8">
+      <hr>
+    </div>
+    <div class="col-xs-2">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-3">
+    </div>
+
+    <!-- Column for Profile Picture -->
+    <div class="col-xs-3">
+        <a href="<%=user_path(user.id)%>"><%= image_tag user.avatar, :class => "roundedCorners" %></a>
+    </div>
+
+    <!-- Column for Profile Name and Data -->
+    <div class="col-xs-3">
+        <h2 class="subhead"><%=user.name%></h2>
+        <h3 class="fa fa-bolt fa-3x"><strong> 5000 Steps</strong></h3>
+        <h3><a href="<%=user_path(user.id)%>">Check out Profile</a></h3>
+    </div>
+
+     <div class="col-xs-3">
+    </div>
+
+  </div>
+      <% end %>
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<!-- 
+
+<div class="container">
   <div class="row">
     <div class=".col-xs-3 text-center">
 
@@ -12,15 +72,19 @@
  
 <% @users.each do |user| %>
   <div class="row">
-    <div class="span3 offset1">
-      <a href="<%=user_path(user.id)%>"><%=user.name%></a>
-      <p class="text-warning"><%= user.email %></p>
+    <div class=".col-xs-3 text-center">
+      <%= image_tag user.avatar, :class => "roundedCorners" %>
+    </div>
+    <div class=".col-xs-3 text-center">
+      <h2><a href="<%=user_path(user.id)%>"><%=user.name%></a></h2>
+    </div>
+      <br><br>
     </div>
   </div>
 <% end %>
-
+            
 
 
     </div>
   </div>
-</div>
+</div> -->

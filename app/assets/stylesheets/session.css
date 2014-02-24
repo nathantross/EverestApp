@@ -3,13 +3,15 @@
   font-size: 60px;
 }
 
-body {
+.main {
   background: url(/assets/mountain.png) no-repeat center center fixed;
   background-color: rgba(184, 219, 255, 1);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  height: 1000px;
+  margin-top: -50px;
 }
 
 .fitbitLogo {

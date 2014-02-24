@@ -13,7 +13,7 @@
  */
 
 body {
-  background-color: rgba(184, 219, 255, 1);
+    background-color: rgba(184, 219, 255, 1);
 }
 
 .btn-primary {
@@ -31,7 +31,29 @@ footer .navbar-fixed-bottom {
 
 
 .roundedCorners {
-  border-radius: 200px;
+  border-radius: 400px;
   border: 0;
   padding: 10px;
+  width: 200px;
 }
+
+
+#green {
+  background-color: green;
+}
+
+#blue {
+  background-color: blue;
+}
+
+#red {
+  background-color: red;
+}
+
+.subhead  {
+  font-family: 'Bowlby One', Arial, sans-serif; font-weight: 200; 
+  font-size: 50px;
+  margin-bottom: -10px;
+}
+
+
