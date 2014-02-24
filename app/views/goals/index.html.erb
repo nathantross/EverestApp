@@ -1,6 +1,25 @@
+<%= render 'layouts/navbar' %>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class=".col-xs-3 text-center">
+
+
 <h1>Goals</h1>
 
 
 <% @goals.each do |goal| %>
   <%= goal.name%></br>
 <% end %>
+
+
+
+
+    </div>
+  </div>
+</div>
+<%= render 'layouts/footerstatic' %>
