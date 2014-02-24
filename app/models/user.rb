@@ -1,12 +1,18 @@
 class User < ActiveRecord::Base
+<<<<<<< HEAD
   has_many :authorizations
   validates :name, :email, :presence => true
+=======
+  has_one :goal
+  #validates :name, :email, :presence => true
+>>>>>>> bd2a11a8ba26c9bff745dc7517beb1e0ca35f5c7
 
-def add_provider(auth_hash)
-  # Check if the provider already exists, so we don't add it twice
-  unless authorizations.find_by_provider_and_uid(auth_hash["provider"], auth_hash["uid"])
-    Authorization.create :user => self, :provider => auth_hash["provider"], :uid => auth_hash["uid"]
+  def self.create_with_omniauth(auth)
+    create! do |user|
+      user.provider = auth['proiver']
+      user.uid = auth['uid']
+      user.name = auth['user_info']
+    end
   end
-end
 
 end
