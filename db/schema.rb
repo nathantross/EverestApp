@@ -16,14 +16,6 @@ ActiveRecord::Schema.define(version: 20140223223905) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "authorizations", force: true do |t|
-    t.string   "provider"
-    t.string   "uid"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "goals", force: true do |t|
     t.string   "name"
     t.float    "distance"
@@ -34,6 +26,8 @@ ActiveRecord::Schema.define(version: 20140223223905) do
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
+    t.string   "provider"
+    t.string   "uid"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "goal_id"
