@@ -12,19 +12,15 @@ class GoalsController < ApplicationController
   def create
     query = params[:goal]
 
-    options = { "format" => "plaintext"} # see the reference appendix in the documentation.[1]
+    options = { "format" => "plaintext"} 
     client = WolframAlpha::Client.new "WAH272-2G2QR5X7L6", options
 
     @response = client.query query["name"]
-
-    # @response = client.query query
-    # binding.pry
     result = @response.find { |pod| pod.id == "Result" }
     answer = result.subpods.first.plaintext
 
     @goal = Goal.new
     @goal.name = query["name"]
-    # @goal.input_interpretation = @goal.input_interpretation
     @goal.input_interpretation = answer
     @goal.save
 
