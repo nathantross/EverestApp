@@ -5,33 +5,59 @@
 <br>
 
 <div class="container">
-  <div class="row">
-    <div class=".col-xs-3 text-center">
 
-
-
-<h1 class="headline">Welcome to Everest base camp!</h1>
+<h1 class="headline text-left">Welcome to Base Camp</h1>
 
   <div class="row">
-  <aside class="span4">
-    <section>
-    <div class="show_header">
-    <h2><%= @user.name %>'s Page</h2><br>
-    <img><%= image_tag(@user.avatar) %></img>
-
-  <div class="show">
-    <h3>Email:</h3>
-    <p><%= @user.email %></p><br>
+    <div class="col-xs-12">
+      <hr>
+    </div>
   </div>
 
-</div>
-<div class=".col-xs-6 text-center">
+
+  <div class="row">
+
+
+    <!-- Column for Profile Picture -->
+    <div class="col-xs-3">
+        <%= image_tag @user.avatar, :class => "roundedCorners" %>
+    </div>
+
+
+
+    <!-- Column for Profile Name and Data -->
+    <div class="col-xs-3">
+        <h2 class="subhead"><%= @user.name %></h2>
+        <h3 class="fa fa-bolt fa-3x"><strong> 5000 Steps</strong></h3>
+        <h3><a class="fa fa-heart fa-1x" href="#">Follow Me</a></h3>
+    </div>
+
+    <div class="col-xs-6">
+      <div id="donut-example"></div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-xs-12">
+      <hr>
+    </div>
+  </div>
+
+
 
 <!-- Morris Line Chart -->
 <div id="myfirstchart" style="height: 400px; width: 100%;"></div>
 
 <!-- Morris Donut Chart -->
-<div id="donut-example"></div>
+
+
+  <div class="row">
+    <div class="col-xs-12">
+      <hr>
+    </div>
+  </div>
+
 
 <!-- Morris Bar Graph -->
 <div id="bar-example"></div>
@@ -41,8 +67,11 @@
 
 
 
-    </div>
-  </div>
+
+</div>
+
+
+
 
 
   <br>
@@ -54,7 +83,6 @@
 <br>
 <br>
 
-<%= render 'layouts/footerstatic' %>
 
 
 
