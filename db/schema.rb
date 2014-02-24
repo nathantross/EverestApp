@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20140223225232) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "goal_id"
+    t.string   "avatar"
     t.string   "oauth_token"
     t.string   "oauth_secret"
   end
