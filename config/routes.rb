@@ -1,6 +1,6 @@
 EverestApp::Application.routes.draw do
 
-root :to "sessions#new"
+# root :to "sessions#new"
   get "user/index"
   get "goal/index"
   get "goal/new"
@@ -21,11 +21,5 @@ get '/login', :to => 'sessions#new', :as => :login
 get '/auth/:provider/callback', :to => 'sessions#create'
 get '/auth/failure', :to => 'sessions#failure'
 get '/logout', :to => 'sessions#destroy'
-
-  get '/login', :to => 'sessions#new', :as => :login
-  get '/auth/:provider/callback', :to => 'sessions#create'
-  # get '/auth/failure', :to => 'sessions#failure'
-  get '/logout', :to => 'sessions#destroy'
-
 
 end
