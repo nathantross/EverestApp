@@ -1,8 +1,17 @@
-<%= form_for @goal do |f| %>
-  <%= f.label :name %></br>
-  <%= f.text_field :name %></br></br>
-  <%= f.label :distance %></br>
-  <%= f.text_field :distance %> feet</br></br>
-  <%= f.submit 'Submit' %></br>
-<% end %>
+<div class="row">
+<div class=".col-xs-3 text-left">
+</div>
+<div class=".col-xs-6 text-left form-group">
 
+<%= form_for @goal do |f| %>
+  <h3><%= f.label :name %></h3>
+  <%= f.text_field :name, class: "form-control", placeholder: "Ex. The Distance to the Moon" %></br>
+  <h3><%= f.label :distance %></h3>
+  <%= f.text_field :distance, class: "form-control", placeholder: "Ex. 230,000 miles" %><br>
+  <%= f.submit 'Get Started', class: "btn btn-primary btn-lg" %></br>
+<% end %>
+</div>
+<div class=".col-xs-3 text-left">
+</div>
+
+</div>
