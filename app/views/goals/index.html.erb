@@ -9,12 +9,23 @@
     <div class=".col-xs-3 text-center">
 
 
-<h1>Goals</h1>
+<h1 class="headline">Current Goals</h1>
 
-
+<div class=".col-xs-12 text-center">
+  <%= link_to "Make a new goal", "/goals/new", class: "btn grow btn-primary" %>
+</div>
+ 
 <% @goals.each do |goal| %>
-  <%= goal.name%></br>
+  <div class="row">
+    <div class="span3 offset1">
+      <h1><a href="<%=goal_path(goal.id)%>"><%= goal.name%></a></h1>
+    </div>
+  </div>
 <% end %>
+
+
+
+
 
 
 
@@ -23,3 +34,5 @@
   </div>
 </div>
 <%= render 'layouts/footerstatic' %>
+
+

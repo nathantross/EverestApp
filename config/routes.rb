@@ -3,8 +3,10 @@ EverestApp::Application.routes.draw do
   resources :goals
 
   root :to => "sessions#new"
-  get '/logout', :to => 'sessions#destroy'
-  get   '/login', :to => 'sessions#new', :as => :login
+
+  get "/about" => "users#about"
+
+  get '/login', :to => 'sessions#new', :as => :login
   get '/auth/:provider/callback', :to => 'sessions#create'
-  get '/auth/failure', :to => 'sessions#failure'
+  # get '/auth/failure', :to => 'sessions#failure'
 end
