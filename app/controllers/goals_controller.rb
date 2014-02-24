@@ -1,4 +1,6 @@
 class GoalsController < ApplicationController
+  require 'wolfram-alpha'
+
   def index
     @goals = Goal.all
   end
@@ -8,11 +10,26 @@ class GoalsController < ApplicationController
   end
 
   def create
-    new_goal = params.require(:goal).permit(:name, :distance)
-    @goal = Goal.create(new_goal)
-    if @goal.save
-      redirect_to @goal
-    end
+    query = params[:goal]
+
+    options = { "format" => "plaintext"} # see the reference appendix in the documentation.[1]
+    client = WolframAlpha::Client.new "WAH272-2G2QR5X7L6", options
+
+    @response = client.query query["name"]
+
+    # @response = client.query query
+    # binding.pry
+    result = @response.find { |pod| pod.id == "Result" }
+    answer = result.subpods.first.plaintext
+
+    @goal = Goal.new
+    @goal.name = query["name"]
+    # @goal.input_interpretation = @goal.input_interpretation
+    @goal.input_interpretation = answer
+    @goal.save
+
+    render :show
+
   end
 
   def show
@@ -23,14 +40,14 @@ class GoalsController < ApplicationController
     @goal = Goal.find(params[:id])
   end
 
-  def update
-    goal = Goal.find(params[:id])
-    updated_goal = params.require(:goal).permit(:name, :distance)
-    goal.update_attributes(updated_goal)
-    if goal.save
-      redirect_to goal
-    end
-  end
+  # def update
+  #   goal = Goal.find(params[:id])
+  #   updated_goal = params.require(:goal).permit(:name, :distance)
+  #   goal.update_attributes(updated_goal)
+  #   if goal.save
+  #     redirect_to goal
+  #   end
+  # end
 
   def delete
     goal = Goal.find(params[:id])

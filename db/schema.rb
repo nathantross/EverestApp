@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20140223223905) do
   create_table "goals", force: true do |t|
     t.string   "name"
     t.float    "distance"
+    t.string   "input_interpretation"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -28,6 +29,8 @@ ActiveRecord::Schema.define(version: 20140223223905) do
     t.string   "email"
     t.string   "provider"
     t.string   "uid"
+    t.string   "oauth_token"
+    t.string   "oauth_secret"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "goal_id"

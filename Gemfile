@@ -26,6 +26,7 @@ gem 'handlebars_assets'
 
 gem 'fitgem'
 gem 'omniauth-fitbit'
+gem 'wolfram-alpha'
 
 gem 'rails_12factor', :group => :production
 
