@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20140223223905) do
     t.string   "email"
     t.string   "provider"
     t.string   "uid"
+    t.string   "oauth_token"
+    t.string   "oauth_secret"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "goal_id"
