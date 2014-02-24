@@ -13,7 +13,13 @@
     </div>
         <br>
       <div class=".col-xs-12 text-center">
-    <%= link_to "", "/auth/fitbit", class: "btn grow fitbitLogo" %>
+        <% if current_user %>
+          Welcome <%= current_user.name %>!
+          <%= link_to "Log Out", logout_path %>
+        <% else %>
+          <%= link_to "", "/auth/fitbit", class: "btn grow fitbitLogo" %>
+        <% end %>
+          
     </div>
   </div>
 </div>
