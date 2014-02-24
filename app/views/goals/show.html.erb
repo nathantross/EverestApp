@@ -4,7 +4,8 @@
 <br>
 <br>
 
-<%= debug @goal %>
+<%= @goal.name %>
+<%= @goal.input_interpretation %>
 
 <div class="container">
   <div class="row">
@@ -13,7 +14,7 @@
 
 
         <h1 class="headline">Climbing <%= @goal.name%></h1>
-        <h3>Distance: <%= @goal.distance%> feet</h3></br>
+        <h3>Distance: <%= @goal.input_interpretation%></h3></br>
 <%= link_to "Stop doing this", "", class: "btn btn-primary btn-lg" %>
 <%= link_to "Invite friends", "", class: "btn btn-primary btn-lg" %>
 <a herf="#"><div class="fa fa-facebook fa-3x" data-href="http://developers.facebook.com/docs/plugins/"></div></a>
@@ -30,7 +31,6 @@
     </div>
   </div>
 </div>
-<%= render 'layouts/footerstatic' %>
 
 
 
