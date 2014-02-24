@@ -2,37 +2,31 @@ require 'spec_helper'
 
 describe User do
   it "has a valid factory" do
-    expect(FactoryGirl.build(:user)).to be_valid 
+    expect(build(:user)).to be_valid 
   end
 
   it "is invalid without a name" do
-    user = FactoryGirl.build(:user, name: nil)
-    expect(user).to have(1).errors_on(:name)
+    expect(build(:user, name: nil)).to have(1).errors_on(:name)
   end
 
   it "is invalid without an email address" do
-    user = FactoryGirl.build(:user, email: nil)
-    expect(user).to have(1).errors_on(:email)
+    expect(build(:user, email: nil)).to have(1).errors_on(:email)
   end
 
   it "is invalid without a provider" do
-    user = FactoryGirl.build(:user, provider: nil)
-    expect(user).to have(1).errors_on(:provider)
+    expect(build(:user, provider: nil)).to have(1).errors_on(:provider)
   end
 
   it "is invalid without a uid" do
-    user = FactoryGirl.build(:user, uid: nil)
-    expect(user).to have(1).errors_on(:uid)
+    expect(build(:user, uid: nil)).to have(1).errors_on(:uid)
   end
 
    it "is invalid without an oauth_token" do
-    user = FactoryGirl.build(:user, oauth_token: nil)
-    expect(user).to have(1).errors_on(:oauth_token)
+    expect(build(:user, oauth_token: nil)).to have(1).errors_on(:oauth_token)
   end
 
   it "is invalid without an oauth_secret" do
-    user = FactoryGirl.build(:user, oauth_secret: nil)
-    expect(user).to have(1).errors_on(:oauth_secret)
+    expect(build(:user, oauth_secret: nil)).to have(1).errors_on(:oauth_secret)
   end
 
   it "returns a user's name as a string" do
@@ -61,8 +55,8 @@ describe User do
 
   it "is invalid with a duplicate oauth_secret" do
     FactoryGirl.create(:user, oauth_secret: "5n68fn4gazxm10d")
-    user = FactoryGirl.build(:user, oauth_token: "5n68fn4gazxm10d")
-    expect(user).to have(1).errors_on(:oauth_token)
+    user = FactoryGirl.build(:user, oauth_secret: "5n68fn4gazxm10d")
+    expect(user).to have(1).errors_on(:oauth_secret)
   end
 
 end
