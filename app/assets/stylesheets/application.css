@@ -17,7 +17,6 @@ body {
 }
 
 .btn-primary {
-
   border-radius: 80px;
   border: 0;
   padding: 18px;
@@ -28,4 +27,11 @@ footer .navbar-fixed-bottom {
   background-color: rgba(255, 255, 255, 1);
   margin-bottom: -10px;
   padding-top: 20px;
+}
+
+
+.roundedCorners {
+  border-radius: 200px;
+  border: 0;
+  padding: 10px;
 }
