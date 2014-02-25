@@ -14,9 +14,13 @@
         <h3>Distance: <%= @goal.input_interpretation%></h3></br>
 
 
-<%= link_to "Delete Goal", @goal.delete, class: "btn btn-primary btn-lg" %>
+<%= debug @goal %>
+
+<%= button_to "Delete Goal", @goal, method: :delete %> 
+
+
 <%= link_to "Invite friends", "", class: "btn btn-primary btn-lg" %>
-<a herf="#"><div class="fa fa-facebook fa-3x" data-href="http://developers.facebook.com/docs/plugins/"></div></a>
+<a href="#"><div class="fa fa-facebook fa-3x" data-href="http://developers.facebook.com/docs/plugins/"></div></a>
 <a herf="#"><i class="fa fa-twitter fa-3x"></i></a>
 <a herf="#"><i class="fa fa-google-plus-square fa-3x"></i></a>
 <a herf="#"><i class="fa fa-envelope fa-3x"></i></a>

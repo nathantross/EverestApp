@@ -32,10 +32,11 @@ class GoalsController < ApplicationController
     @goal = Goal.find(params[:id])
   end
 
-  def delete
+  def destroy
+    # binding.pry
     @goal = Goal.find(params[:id])
     @goal.delete
-    render :index
+    redirect_to goals_path
   end
 
 end
