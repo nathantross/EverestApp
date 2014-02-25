@@ -56,4 +56,11 @@ footer .navbar-fixed-bottom {
   margin-bottom: -10px;
 }
 
+.navimage {
+  border-radius: 400px;
+  border: 0;
+  padding: 10px;
+  width: 50px;
+}
+
 
