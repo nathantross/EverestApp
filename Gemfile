@@ -29,7 +29,9 @@ gem 'omniauth-fitbit'
 
 gem 'wolfram-alpha'
 
-gem 'rails_12factor', :group => :production
+group :production do
+  gem 'rails_12factor'
+end
 
 group :development, :test do
   gem 'pry'
