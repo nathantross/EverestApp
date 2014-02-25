@@ -81,39 +81,4 @@ describe GoalsController do
       end
     end
   end
-
-  describe 'PATCH #update' do
-    context "with valid attributes" do
-      it "updates the goal in the database" do
-      end
-
-      it "redirects to the goal" do
-      end
-    end
-
-    context "with invalid attributes" do
-      it "does not update the goal" do
-      end
-
-      it "re-renders the #edit template" do
-      end
-    end
-  end
-
-  describe 'DELETE #destroy' do
-    before :each do
-      @goal = create(:goal)
-    end
-
-    it "deletes the goal from the database" do
-      expect{
-        delete :destroy, id: @goal
-      }.to change(Goal,:count).by(-1)
-    end
-
-    it "redirects to the #index" do
-      delete :destroy, id: @goal
-      expect(response).to redirect_to goals_url
-    end
-  end
 end
