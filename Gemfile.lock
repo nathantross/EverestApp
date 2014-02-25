@@ -105,6 +105,7 @@ GEM
     minitest (4.7.5)
     multi_json (1.8.4)
     multi_xml (0.5.5)
+    nokogiri  ()
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     oauth (0.4.7)
@@ -205,14 +206,9 @@ GEM
     uglifier (2.4.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-<<<<<<< HEAD
-    wolfram-alpha (0.3.1)
-      nokogiri
-=======
     websocket (1.0.7)
+    wolfram-alpha (0.3.1)
     xpath (2.0.0)
-      nokogiri (~> 1.3)
->>>>>>> 7868963e925c434d80df8053e77e4fc29e207556
 
 PLATFORMS
   ruby
