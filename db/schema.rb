@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20140223225232) do
   create_table "goals", force: true do |t|
     t.string   "name"
     t.string   "input_interpretation"
+    t.float    "distance"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -23,6 +23,7 @@ class GoalsController < ApplicationController
     @goal = Goal.new
     @goal.name = query["name"]
     @goal.input_interpretation = answer
+    @goal.distance = answer.to_i
     @goal.save
 
     render :show
