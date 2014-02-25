@@ -20,7 +20,7 @@
 
     <!-- Column for Profile Picture -->
     <div class="col-xs-3">
-        <%= image_tag @user.avatar, :class => "roundedCorners" %>
+        <%= image_tag @avatar, :class => "roundedCorners" %>
     </div>
 
 
@@ -28,7 +28,9 @@
     <!-- Column for Profile Name and Data -->
     <div class="col-xs-3">
         <h2 class="subhead"><%= @user.name %></h2>
-        <h3 class="fa fa-bolt fa-3x"><strong> 5000 Steps</strong></h3>
+        <h4 class="fa fa-bolt fa-3x"><strong> <%= @distance %> Miles traveled all time!</strong></h4>
+        <h4 class 'fa fa-bold fa-3x'><strong> <%= @climb %> total feet climbed!</strong></h4>
+
         <h3><a class="fa fa-heart fa-1x" href="#">Follow Me</a></h3>
     </div>
 
@@ -121,7 +123,6 @@ Morris.Donut({
   element: 'donut-example',
   data: [
     {label: "Calories Used", value: 50000000},
-    {label: "Calories eaten", value: 20000000}
   ]
 });
 

@@ -19,8 +19,7 @@
         <br>
       <div class=".col-xs-12 text-center">
         <% if current_user %>
-          Welcome <%= current_user.name %>!
-          <%= link_to "Log Out", logout_path %>
+          <h4>Welcome <%= current_user.name %>!</h4>
         <% else %>
           <%= link_to "", "/auth/fitbit", class: "btn grow fitbitLogo" %>
         <% end %>
