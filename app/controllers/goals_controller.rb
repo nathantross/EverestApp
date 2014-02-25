@@ -10,6 +10,7 @@ class GoalsController < ApplicationController
   end
 
   def create
+
     query = params[:goal]
 
     options = { "format" => "plaintext"} 
@@ -32,9 +33,10 @@ class GoalsController < ApplicationController
     @goal = Goal.find(params[:id])
   end
 
+
   def delete
     @goal = Goal.find(params[:id])
     @goal.delete
-    render :index
+    render :indexend
   end
 end

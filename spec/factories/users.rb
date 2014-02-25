@@ -8,8 +8,3 @@ FactoryGirl.define do
     oauth_secret "3j8dn48rj58xn40"
     goal_id "1"
   end 
-end
-
-
-        
-        

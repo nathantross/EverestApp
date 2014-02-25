@@ -13,4 +13,9 @@ describe Goal do
     expect(build(:goal, distance: nil)).to have(1).errors_on(:distance)
   end
 
+  it "is invalid without an input interpretation" do
+    expect(build(:goal, input_interpretation: nil)).to have(1).errors_on(:input_interpretation)
+  end
+
 end
+
