@@ -11,12 +11,10 @@
 
 
         <h1 class="headline">Climbing <%= @goal.name%></h1>
-        <h3>Distance: <%= @goal.input_interpretation%></h3></br>
+        <h3>Distance: <%= @goal.distance%> miles</h3></br>
 
 
-<%= debug @goal %>
-
-<%= button_to "Delete Goal", @goal, method: :delete %> 
+<%= button_to "Delete Goal", @goal, method: :delete, class: "btn btn-primary btn-lg" %> 
 
 
 <%= link_to "Invite friends", "", class: "btn btn-primary btn-lg" %>
