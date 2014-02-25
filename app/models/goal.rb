@@ -1,6 +1,6 @@
 class Goal < ActiveRecord::Base
 
-  validates :name, :input_interpretation, :presence => true
+  validates :name, :input_interpretation, :distance, :presence => true
 
 end
 

@@ -3,6 +3,7 @@ class CreateGoals < ActiveRecord::Migration
     create_table :goals do |t|
       t.string :name
       t.string :input_interpretation
+      t.float  :distance
       t.timestamps
     end
   end
