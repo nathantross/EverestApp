@@ -32,9 +32,4 @@ class GoalsController < ApplicationController
     @goal = Goal.find(params[:id])
   end
 
-  def delete
-    @goal = Goal.find(params[:id])
-    @goal.delete
-    render :index
-  end
 end

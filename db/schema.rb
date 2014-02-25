@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 20140223225232) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-#input interpretation is the distance in miles
   create_table "goals", force: true do |t|
     t.string   "name"
     t.string   "input_interpretation"
