@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.1.0'
 
-
 gem 'rails', '4.0.2'
 
 gem 'pg'
@@ -25,13 +24,31 @@ end
 gem 'handlebars_assets'
 
 gem 'fitgem'
+
 gem 'omniauth-fitbit'
+
 gem 'wolfram-alpha'
 
 gem 'rails_12factor', :group => :production
 
 group :development, :test do
   gem 'pry'
+  gem 'pry-rails'
+  gem 'pry-byebug'
   gem 'rspec-rails'
   gem 'dotenv-rails'
+  gem 'factory_girl_rails'
+  gem 'quiet_assets'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+  gem 'awesome_print'
+end
+
+group :test do
+  gem 'faker'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'selenium-webdriver'
 end
