@@ -31,9 +31,17 @@ gem 'rails_12factor', :group => :production
 
 group :development, :test do
   gem 'pry'
+  gem 'pry-rails'
+  gem 'pry-byebug'
   gem 'rspec-rails'
   gem 'dotenv-rails'
   gem 'factory_girl_rails'
+  gem 'quiet_assets'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+  gem 'awesome_print'
+
 end
 
 group :test do
