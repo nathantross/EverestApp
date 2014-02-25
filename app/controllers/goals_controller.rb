@@ -26,18 +26,16 @@ class GoalsController < ApplicationController
     @goal.save
 
     render :show
-
   end
 
   def show
     @goal = Goal.find(params[:id])
   end
 
-
-  def delete
+  def destroy
     @goal = Goal.find(params[:id])
     @goal.delete
-    render :indexend
-
+    redirect_to goals_path
   end
+
 end
