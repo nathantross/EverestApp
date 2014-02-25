@@ -1,50 +1,119 @@
 require 'spec_helper'
 
 describe GoalsController do
+
   describe 'GET #index' do
+    it "renders the :index template" do
+      get :index
+      expect(response).to render_template :index
+    end
   end
 
   describe 'GET #show' do
-    it "assigns the requested goal to @goal"
-    it "renders the :show template"
+    it "assigns the requested goal to @goal" do
+      goal = create(:goal)
+      get :show, id: goal
+      expect(assigns(:goal)).to eq goal
+    end
+
+    it "renders the :show template" do
+      goal = create(:goal)
+      get :show, id: goal
+      expect(response).to render_template :show
+    end
   end
 
   describe 'GET #new' do
-    it "assigns a new goal to @goal"
-    it "renders the :new template"
+    it "assigns a new goal to @goal" do
+      get :new
+      expect(assigns(:goal)).to be_a_new(Goal)
+    end
+
+    it "renders the :new template" do
+      get :new
+      expect(response).to render_template :new
+    end
   end
 
   describe 'GET #edit' do
-    it "assigns the requested goal to @goal"
-    it "renders the :edit template"
+    it "assigns the requested goal to @goal" do
+      goal = create(:goal)
+      get :edit, id: goal
+      expect(assigns(:goal)).to eq goal
+    end
+
+    it "renders the :edit template" do
+      goal = create(:goal)
+      get :edit, id: goal
+      expect(response).to render_template :edit
+    end
   end
 
   describe 'POST #create' do
-    context "with valid attributes" do
-      it "saves the new goal in the database"
-      it redirects to goals#show
+    before :each do
+      @goal = mock_model("Goal")
+      allow(Goal).to receive(:create)
+    end
+
+    context "with valid attribuates" do
+      it "saves the new goal in the database" do
+          expect(Goal).to receive(:create).with({"name" => "Empire State Building", "input_interpretation" => "string"})
+          post :create, {goal: {name: "Empire State Building", input_interpretation: "string"}}
+      end
+
+      it "redirects to the goals#show" do
+        post :create, goal: attributes_for(:goal)
+        expect(response).to redirect_to goal_path(assigns[:goal])
+      end
     end
 
     context "with invalid attributes" do
-      it "does not save the new goal in the database"
-      it "re-renders the :new template"
+      it "does not save the new goal in the database" do
+        expect {
+          post :create, goal: attributes_for(:invalid_goal)
+        }.to_not change(Goal, :count)
+      end
+
+      it "re-renders the :new template" do
+        post :create,
+          goal: attributes_for(:invalid_goal)
+        expect(response).to render_template :new
+      end
     end
   end
 
   describe 'PATCH #update' do
     context "with valid attributes" do
-      it "updates the goal in the database"
-      it "redirects to the goal"
+      it "updates the goal in the database" do
+      end
+
+      it "redirects to the goal" do
+      end
     end
 
     context "with invalid attributes" do
-      it "does not update the goal"
-      it "re-renders the #edit template"
+      it "does not update the goal" do
+      end
+
+      it "re-renders the #edit template" do
+      end
     end
   end
 
   describe 'DELETE #destroy' do
-    it "deletes the goal from the database"
-    it "redirects to the goals#index"
+    before :each do
+      @goal = create(:goal)
+    end
+
+    it "deletes the goal from the database" do
+      expect{
+        delete :destroy, id: @goal
+      }.to change(Goal,:count).by(-1)
+    end
+
+    it "redirects to the #index" do
+      delete :destroy, id: @goal
+      expect(response).to redirect_to goals_url
+    end
   end
 end

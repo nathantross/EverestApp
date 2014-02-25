@@ -10,6 +10,7 @@ class GoalsController < ApplicationController
   end
 
   def create
+
     query = params[:goal]
 
     options = { "format" => "plaintext"} 
@@ -45,8 +46,9 @@ class GoalsController < ApplicationController
   #   end
   # end
 
-  def delete
+  def destroy
     goal = Goal.find(params[:id])
     goal.destroy
+    redirect_to '/goals'
   end
 end
