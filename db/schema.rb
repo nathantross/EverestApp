@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140223223905) do
+ActiveRecord::Schema.define(version: 20140223225232) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+#input interpretation is the distance in miles
   create_table "goals", force: true do |t|
     t.string   "name"
-    t.float    "distance"
     t.string   "input_interpretation"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -29,12 +29,12 @@ ActiveRecord::Schema.define(version: 20140223223905) do
     t.string   "email"
     t.string   "provider"
     t.string   "uid"
-    t.string   "oauth_token"
-    t.string   "oauth_secret"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "goal_id"
     t.string   "avatar"
+    t.string   "oauth_token"
+    t.string   "oauth_secret"
   end
 
 end
