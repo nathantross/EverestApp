@@ -8,12 +8,12 @@
 goals = []
 
 # The units for distance is miles
-goals << Goal.create(name: "Mount Everest", input_interpretation: "5.49792 miles")
-goals << Goal.create(name: "Empire State Building", input_interpretation: "0.275379 miles")
-goals << Goal.create(name: "New York/Los Angeles", input_interpretation: "2448.29 miles")
-goals << Goal.create(name: "Earth/Moon", input_interpretation: "238900 miles")
-goals << Goal.create(name: "Mount Killimanjaro Marangu Route", input_interpretation: "40 miles")
-goals << Goal.create(name: "The center of the Earth", input_interpretation: "3958.8 miles")
+goals << Goal.create(name: "Mount Everest", input_interpretation: "5.49792 miles", distance: 5.49792)
+goals << Goal.create(name: "Empire State Building", input_interpretation: "0.275379 miles", distance: 0.275379)
+goals << Goal.create(name: "New York/Los Angeles", input_interpretation: "2448.29 miles", distance: 2448.29)
+goals << Goal.create(name: "Earth/Moon", input_interpretation: "238900 miles", distance: 238900)
+goals << Goal.create(name: "Mount Killimanjaro Marangu Route", input_interpretation: "40 miles", distance: 40)
+goals << Goal.create(name: "The center of the Earth", input_interpretation: "3958.8 miles", distance: 3958.8)
 
 users = []
 
