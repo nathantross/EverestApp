@@ -37,4 +37,5 @@ class GoalsController < ApplicationController
     @goal.delete
     render :index
   end
+
 end
