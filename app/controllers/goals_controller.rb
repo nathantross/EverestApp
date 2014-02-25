@@ -38,5 +38,6 @@ class GoalsController < ApplicationController
     @goal = Goal.find(params[:id])
     @goal.delete
     render :indexend
+
   end
 end
