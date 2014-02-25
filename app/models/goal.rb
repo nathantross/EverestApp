@@ -1,3 +1,3 @@
 class Goal < ActiveRecord::Base
-  validates :name, :presence => true
+  validates :name, :input_interpretation, :presence => true
 end
