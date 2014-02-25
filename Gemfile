@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.1.0'
 
-
 gem 'rails', '4.0.2'
 
 gem 'pg'
@@ -25,7 +24,9 @@ end
 gem 'handlebars_assets'
 
 gem 'fitgem'
+
 gem 'omniauth-fitbit'
+
 gem 'wolfram-alpha'
 
 gem 'rails_12factor', :group => :production
