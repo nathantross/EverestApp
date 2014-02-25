@@ -13,7 +13,7 @@
         <h1 class="headline">Climbing <%= @goal.name%></h1>
         <h3>Distance: <%= @goal.input_interpretation%></h3></br>
 
-<%= link_to "Delete this goal", "goals#destroy", class: "btn btn-primary btn-lg" %>
+<%= link_to "Delete this goal", @goal.delete, class: "btn btn-primary btn-lg" %>
 <%= link_to "Invite friends", "", class: "btn btn-primary btn-lg" %>
 <a herf="#"><div class="fa fa-facebook fa-3x" data-href="http://developers.facebook.com/docs/plugins/"></div></a>
 <a herf="#"><i class="fa fa-twitter fa-3x"></i></a>
