@@ -1,17 +1,10 @@
-.main {
-  background: url(mountain.png) no-repeat center center fixed;
-  background-color: rgba(184, 219, 255, 1);
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height: 1000px;
-  margin-top: -50px;
-}
+/* * * * * * * * * Session New * * * * * * * * */
+
+/* Fitbit Connect Button */
 
 .fitbitLogo {
   background: url(fitbit_connect.png) no-repeat;
-  opacity: 0.95;
+  opacity: 0.92;
   padding-left: 141px;
   padding-right: 141px;
   margin-top: 50px;
@@ -19,11 +12,22 @@
   text-align: center;
 }
 
-
-
 .fitbitLogo:hover {
+
   opacity: 1;
+  padding-left: 141px;
+  padding-right: 141px;
+  margin-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
 }
 
+.fitbitLogo:active {
 
-/*background-image: url(image-path('mountain.png'));*/
+  opacity: 0.95;
+  padding-left: 141px;
+  padding-right: 141px;
+  margin-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+}
