@@ -67,7 +67,7 @@ body {
   background-size: cover;
 }*/
 
-/*.fitbitLogo {
+.fitbitLogo {
   background: url(fitbit_connect.png) no-repeat;
   opacity: 0.95;
   padding-left: 141px;
@@ -81,7 +81,7 @@ body {
 
 .fitbitLogo:hover {
   opacity: 1;
-}*/
+}
 
 
 
@@ -94,7 +94,6 @@ body {
   margin: 0 8px;
   width: 28px;
 }
-
 
 /* Alert */
 .alert{
@@ -112,6 +111,14 @@ border-radius: 0px;
 border: 0;
 border-color: #56a9ed;
 color: #cee9ff;
+}
+
+.alert-warning {
+  background-color: #ffae00;
+  border-radius: 0px;
+  border: 0;
+  border-color: #ffae00;
+  color: #ffffff;
 }
 
 .vcenter {
