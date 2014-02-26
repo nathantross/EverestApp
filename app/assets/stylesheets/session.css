@@ -4,7 +4,7 @@
 }
 
 .main {
-  background: url(/assets/images/mountain.png) no-repeat center center fixed;
+  background: url(mountain.png) no-repeat center center fixed;
   background-color: rgba(184, 219, 255, 1);
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -15,7 +15,7 @@
 }
 
 .fitbitLogo {
-  background: url(/assets/images/fitbit_connect.png) no-repeat;
+  background: url(fitbit_connect.png) no-repeat;
   opacity: 0.95;
   padding-left: 141px;
   padding-right: 141px;
