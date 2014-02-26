@@ -1,66 +1,116 @@
 <%= render 'layouts/navbar' %>
-<br>
-<br>
-<br>
-<br>
 
 <div class="container">
+
+  <!-- Goal Information from Wolfram -->
   <div class="row">
-    <div class=".col-xs-3 text-center">
-
-
-
+    <div class="col-xs-12 text-center">
         <h1 class="headline">Climbing <%= @goal.name%></h1>
         <h3>Distance: <%= @goal.distance%> miles</h3></br>
-<%= button_to "Add Goal", @goal, method: :patch, class: 'btn btn-primary btn-lg default' %>
-<%= button_to "Delete Goal", @goal, method: :delete, class: "btn btn-primary btn-lg" %> 
-<%= link_to "Invite friends", "", class: "btn btn-primary btn-lg" %>
-<a href="#"><div class="fa fa-facebook fa-3x" data-href="http://developers.facebook.com/docs/plugins/"></div></a>
-<a herf="#"><i class="fa fa-twitter fa-3x"></i></a>
-<a herf="#"><i class="fa fa-google-plus-square fa-3x"></i></a>
-<a herf="#"><i class="fa fa-envelope fa-3x"></i></a>
-<div class="fb-share-button" data-href="http://developers.facebook.com/docs/plugins/" data-type="button"></div>
-
-        <!-- Morris Line Chart -->
-<div id="area-example"  style="height: 500px; width: 100%;"></div>
-
-
-
     </div>
   </div>
-</div>
+
+  <!-- Goal Navbar -->
+  <div class="row">
+    <div class="col-xs-1 text-center">
+    </div>
+    <div class="col-xs-10 text-center">
+      <%= render 'goalnavbar' %>
+    </div>
+    <div class="col-xs-1 text-center">
+    </div>
+  </div>
+
+
+<!-- http://www.oesmith.co.uk/morris.js/index.html -->
+  <!-- Morris Graph -->
+  <div class="row">
+    <div class="col-xs-1 text-center">
+    </div>
+    <div class="col-xs-10 text-center">
+      <div id="area-example"  style="height: 500px; width: 100%;"></div>
+    </div>
+    <div class="col-xs-1 text-center">
+    </div>
+  </div>
+
+
+  <!-- Morris Donut -->
+  <div class="row">
+    <div class="col-xs-1 text-center">
+    </div>
+    <div class="col-xs-10 text-center">
+      <div id="donut-example"></div>
+    </div>
+    <div class="col-xs-1 text-center">
+    </div>
+  </div>
+
+  <!-- Morris Bar Chart -->
+  <div class="row">
+    <div class="col-xs-1 text-center">
+    </div>
+    <div class="col-xs-10 text-center">
+      <div id="bar-example"></div>
+    </div>
+    <div class="col-xs-1 text-center">
+    </div>
+  </div>
+</div><!-- Close Container -->
+
+<%= render 'layouts/footer' %>
 
 
 
+<!-- Morris Graph Script -->
 <script>
 
-// Area Chart
-
-Morris.Area({
-  element: 'area-example',
+// Donut
+Morris.Donut({
+  element: 'donut-example',
   data: [
-    { y: '2006', a: 0, b: 0 },
-    { y: '2007', a: 10,  b: 65 },
-    { y: '2008', a: 20,  b: 40 },
-    { y: '2009', a: 30,  b: 65 },
-    { y: '2010', a: 40,  b: 40 },
-    { y: '2011', a: 50,  b: 65 },
-    { y: '2012', a: 1000, b: 90 }
+    {label: "Download Sales", value: 12},
+    {label: "In-Store Sales", value: 30},
+    {label: "Mail-Order Sales", value: 20}
+  ]
+});
+
+
+// Bar Chart
+Morris.Bar({
+  element: 'bar-example',
+  data: [
+    { y: '2006', a: 100, b: 90 },
+    { y: '2007', a: 75,  b: 65 },
+    { y: '2008', a: 50,  b: 40 },
+    { y: '2009', a: 75,  b: 65 },
+    { y: '2010', a: 50,  b: 40 },
+    { y: '2011', a: 75,  b: 65 },
+    { y: '2012', a: 100, b: 90 }
   ],
   xkey: 'y',
   ykeys: ['a', 'b'],
   labels: ['Series A', 'Series B']
 });
 
+
+
+  // Area Chart
+  Morris.Area({
+    element: 'area-example',
+    data: [
+      { y: '2006', a: 0, b: 0 },
+      { y: '2007', a: 10,  b: 65 },
+      { y: '2008', a: 20,  b: 40 },
+      { y: '2009', a: 30,  b: 65 },
+      { y: '2010', a: 40,  b: 40 },
+      { y: '2011', a: 50,  b: 65 },
+      { y: '2012', a: 1000, b: 90 }
+    ],
+    xkey: 'y',
+    ykeys: ['a', 'b'],
+    labels: ['Series A', 'Series B']
+  });
+
 </script>
 
-
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=374885109276440";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
