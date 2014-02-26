@@ -1,6 +1,5 @@
 EverestApp::Application.routes.draw do
   resources :users
-  resources :goals
 
   root :to => "sessions#new"
 
@@ -10,4 +9,10 @@ EverestApp::Application.routes.draw do
 
   get '/logout', :to => 'sessions#destroy'
 
+  get '/goals', to: 'goals#index', as: 'goals'
+  get '/goals/new', to: 'goals#new', as: 'new_goal'
+  post '/goals', to: 'goals#create'
+  get '/goals/:id', to: 'goals#show', as: 'goal'
+
 end
+

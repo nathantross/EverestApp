@@ -1,4 +1,4 @@
-<nav class="navbar-fixed-top navbar-default" role="navigation">
+<nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -34,10 +34,10 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<div>
-  testtest
-<% if flash[:notice] %>
-    <div class="notice">WHOA<%= flash[:notice] %></div>
-  <% end %>
-</div>
 
+  <!-- Flash Notice Alert -->
+  <% if flash[:notice] %>
+    <div class="alert alert-success alert-dismissable text-center">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <strong><%= flash[:notice] %><strong></div>
+  <% end %>

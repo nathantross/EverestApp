@@ -19,8 +19,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-
-
   def distance
     @distance = fitgem_info.activity_statistics['lifetime']['tracker']['distance']
   end
