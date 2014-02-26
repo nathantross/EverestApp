@@ -63,4 +63,8 @@ footer .navbar-fixed-bottom {
   width: 50px;
 }
 
-
+#goalButton {
+  padding-top: 200px;
+  margin-top: 40px;
+  margin-bottom: -400px;
+}
