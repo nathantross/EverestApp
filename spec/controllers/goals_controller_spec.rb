@@ -57,8 +57,8 @@ describe GoalsController do
 
     context "with valid attribuates" do
       it "saves the new goal in the database" do
-          expect(Goal).to receive(:create).with({"name" => "Empire State Building", "input_interpretation" => "string"})
-          post :create, {goal: {name: "Empire State Building", input_interpretation: "string"}}
+          expect(Goal).to receive(:create).with({"name" => "Empire State Building", "distance" => "123", "input_interpretation" => "string"})
+          post :create, {goal: {name: "Empire State Building", distance: "123", input_interpretation: "string"}}
       end
 
       it "redirects to the goals#show" do
@@ -68,15 +68,19 @@ describe GoalsController do
     end
 
     context "with invalid attributes" do
+      before :each do
+        @goal = goal.new(name: nil, distance: nil, input_interpretation: nil)
+      end
+
       it "does not save the new goal in the database" do
         expect {
-          post :create, goal: attributes_for(:invalid_goal)
+          post :create, goal
         }.to_not change(Goal, :count)
       end
 
       it "re-renders the :new template" do
         post :create,
-          goal: attributes_for(:invalid_goal)
+          goal: attributes_for(@goal)
         expect(response).to render_template :new
       end
     end
