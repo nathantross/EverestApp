@@ -27,6 +27,9 @@
         
             <li class="divider"></li>
                       <li><%= link_to " Sign Out", "/logout", class: "fa fa-sign-out" %></li>
+          <% else %>
+            <li><%= link_to " Sign In", "/auth/fitbit", class: "fa fa-sign-in" %></li>
+
             <% end %>
           </ul>
         </li>
