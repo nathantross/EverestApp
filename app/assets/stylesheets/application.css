@@ -14,6 +14,9 @@
 
 body {
     background-color: rgba(184, 219, 255, 1);
+    /*padding for static nav/footer*/
+    padding-top: 100px;
+    padding-bottom: 150px;
 }
 
 .btn-primary {
@@ -34,7 +37,7 @@ footer .navbar-fixed-bottom {
   border-radius: 400px;
   border: 0;
   padding: 10px;
-  width: 200px;
+  width: 175px;
 }
 
 
@@ -50,11 +53,6 @@ footer .navbar-fixed-bottom {
   background-color: red;
 }
 
-.subhead  {
-  font-family: 'Bowlby One', Arial, sans-serif; font-weight: 200; 
-  font-size: 50px;
-  margin-bottom: -10px;
-}
 
 .navimage {
   border-radius: 400px;
@@ -68,3 +66,27 @@ footer .navbar-fixed-bottom {
   margin-top: 40px;
   margin-bottom: -400px;
 }
+
+.headline {
+  font-family: 'Bowlby One', Arial, sans-serif; font-weight: 400; 
+  font-size: 60px;
+  padding-bottom: 10px;
+}
+
+.subhead  {
+  font-family: 'Bowlby One', Arial, sans-serif; font-weight: 200; 
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* About Page */
+.fa {
+  padding-right: 5px;
+}
+
+
+
+
+
+
+
