@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
 
   def fitgem_info
     @fitgem_info = current_user.fitbit_data
+    binding.pry
   end
 
   def distance
