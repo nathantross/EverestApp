@@ -35,7 +35,7 @@
     </div>
 
     <div class="col-xs-6">
-      <div id="donut-example"></div>
+      <div><%= plot_time %></div>
     </div>
   </div>
 
@@ -116,16 +116,6 @@ new Morris.Line({
   // chart.
   labels: ['Value']
 });
-
-// Donut Chart
-
-Morris.Donut({
-  element: 'donut-example',
-  data: [
-    {label: "Calories Used", value: 50000000},
-  ]
-});
-
 
 // Bar Graph
 

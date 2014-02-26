@@ -7,13 +7,14 @@ class ApplicationController < ActionController::Base
   helper_method :distance
   helper_method :avatar
   helper_method :climb
+  helper_method :plot_time
 
   def fitgem_info
     @fitgem_info = current_user.fitbit_data
   end
 
   def plot_time
-    @plot_time = fitgem_info.activity_on_date_range("tracker/distance", current_user.start_time, 'today')
+    @plot_time = fitgem_info.activity_on_date_range("tracker/distance", current_user.start_date, 'today')
   end
 
 
