@@ -1,1 +1,0 @@
-$(function(){$.get("/users/run.json").done(function(e){var a=e.points,n=e.max_val;new Morris.Line({element:"goalchart",data:a,xkey:"dateTime",ykeys:["value"],ymax:n,labels:["Miles towards goal"]})})});
