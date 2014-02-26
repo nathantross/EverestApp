@@ -12,12 +12,19 @@ class ApplicationController < ActionController::Base
     @fitgem_info = current_user.fitbit_data
   end
 
+  def plot_time
+    @plot_time = fitgem_info.activity_on_date_range("tracker/distance", current_user.start_time, 'today')
+  end
+
+
+
   def distance
     @distance = fitgem_info.activity_statistics['lifetime']['tracker']['distance']
   end
 
   def avatar
     @avatar = fitgem_info.user_info['user']['avatar']
+
   end
 
   def climb

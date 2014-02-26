@@ -34,4 +34,10 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+<div>
+  testtest
+<% if flash[:notice] %>
+    <div class="notice">WHOA<%= flash[:notice] %></div>
+  <% end %>
+</div>
 

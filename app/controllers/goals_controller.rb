@@ -29,6 +29,15 @@ class GoalsController < ApplicationController
     render :show
   end
 
+  def update
+    new_goal = Goal.find(params[:id])
+    current_user.goal = new_goal
+    current_user.start_date = DateTime.now
+    User.find(current_user.id).update_attributes(:goal => current_user.goal, :start_date => current_user.start_date)
+
+    redirect_to user_path(current_user.id), :notice => "Goal added!"
+  end  
+
   def show
     @goal = Goal.find(params[:id])
   end
