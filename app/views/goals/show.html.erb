@@ -12,7 +12,7 @@
 
         <h1 class="headline">Climbing <%= @goal.name%></h1>
         <h3>Distance: <%= @goal.distance%> miles</h3></br>
-
+<%= button_to "Add Goal", @goal, method: :patch, class: 'btn btn-primary btn-lg default' %>
 <%= button_to "Delete Goal", @goal, method: :delete, class: "btn btn-primary btn-lg" %> 
 <%= link_to "Invite friends", "", class: "btn btn-primary btn-lg" %>
 <a href="#"><div class="fa fa-facebook fa-3x" data-href="http://developers.facebook.com/docs/plugins/"></div></a>
