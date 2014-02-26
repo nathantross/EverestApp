@@ -16,7 +16,9 @@ RSpec.configure do |config|
   # Include Factory Girl syntax to simplify calls to factories 
   config.include FactoryGirl::Syntax::Methods
 
-  config.include LoginMacros
+  # include Omniauth macro to simulate provider hash
+  config.include OmniauthMacros
+
   # ## Mock Framework
   #
   # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
@@ -44,3 +46,6 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 end
+
+# Turn on test mode for OmniAuth
+  OmniAuth.config.test_mode = true

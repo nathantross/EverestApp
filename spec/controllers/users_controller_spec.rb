@@ -2,16 +2,11 @@ require 'spec_helper'
 
 describe UsersController do
   before :each do
-    @user = create(:user, 
-      name: "Testy McTesterson", 
-      email: "testymctesterson@example.com", 
-      provider: "fitbit", 
-      uid: "1j4d84jr8fj3",
-      oauth_token: "2j48dj5lgfpbn3bs", 
-      oauth_secret: "2bs84hrnf9em4b2",
-      goal_id: "1",
-      avatar: "string")
-    session[:user_id] = @user.id
+    request.env["devise.mapping"] = Devise.mappings[:user] 
+    request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:fitbit] 
+
+    @user = Factory(:user)
+    sign_in @user
   end
 
   describe 'GET #index' do
