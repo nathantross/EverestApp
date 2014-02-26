@@ -34,14 +34,10 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<div>
 
-<% if flash[:notice] %>
-    <div class="notice">WHOA<%= flash[:notice] %></div>
+  <!-- Flash Notice Alert -->
+  <% if flash[:notice] %>
+    <div class="alert alert-success alert-dismissable text-center">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <strong><%= flash[:notice] %><strong></div>
   <% end %>
-</div>
-
-<!-- Flash Notice Alert -->
-<% if flash[:notice] %>
-  <div class="alert alert-success text-center"><strong><%= flash[:notice] %><strong></div>
-<% end %>
