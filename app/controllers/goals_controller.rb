@@ -32,11 +32,4 @@ class GoalsController < ApplicationController
   def show
     @goal = Goal.find(params[:id])
   end
-
-  def destroy
-    @goal = Goal.find(params[:id])
-    @goal.delete
-    redirect_to goals_path
-  end
-
 end
