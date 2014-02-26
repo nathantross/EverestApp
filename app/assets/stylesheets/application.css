@@ -15,8 +15,8 @@
 body {
     background-color: rgba(184, 219, 255, 1);
     /*padding for static nav/footer*/
-    padding-top: 100px;
-    padding-bottom: 150px;
+    /*padding-top: 100px;*/
+    margin-bottom: 150px;
 }
 
 .btn-primary {
