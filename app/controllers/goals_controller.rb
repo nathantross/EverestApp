@@ -18,15 +18,27 @@ class GoalsController < ApplicationController
 
     @response = client.query query["name"]
     result = @response.find { |pod| pod.id == "Result" }
-    answer = result.subpods.first.plaintext
+    if !result.nil?
+      answer = result.subpods.first.plaintext
+      @goal = Goal.new
+      @goal.name = query["name"]
+      @goal.input_interpretation = answer
+      @goal.distance = answer.to_f
+ 
+      if answer.include? "miles"
+        @goal.save 
+        render :show
+      else
+        flash[:error]='This does not return a distance in miles. Try again.'
+        render :new
+      end
+    else
+      answer = nil
+      flash[:error] = "No answer. Please try again."
+      redirect_to new_goal_path
+    end
 
-    @goal = Goal.new
-    @goal.name = query["name"]
-    @goal.input_interpretation = answer
-    @goal.distance = answer.to_f
-    @goal.save
 
-    render :show
   end
 
   def update
