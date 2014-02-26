@@ -1,4 +1,5 @@
 EverestApp::Application.routes.draw do
+  get '/users/run', to: 'users#run'
   resources :users
 
   root :to => "sessions#new"
