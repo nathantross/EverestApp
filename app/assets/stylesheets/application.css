@@ -12,59 +12,18 @@
  *= require_tree .
  */
 
+
+/* * * * * * * * * Main * * * * * * * * */
+
 body {
-    background-color: rgba(184, 219, 255, 1);
-    /*padding for static nav/footer*/
-    /*padding-top: 100px;*/
-    margin-bottom: 150px;
-}
-
-.btn-primary {
-  border-radius: 80px;
-  border: 0;
-  padding: 18px;
-}
-
-
-footer .navbar-fixed-bottom {
-  background-color: rgba(255, 255, 255, 1);
-  margin-bottom: -10px;
-  padding-top: 20px;
-}
-
-
-.roundedCorners {
-  border-radius: 400px;
-  border: 0;
-  padding: 10px;
-  width: 175px;
-}
-
-
-#green {
-  background-color: green;
-}
-
-#blue {
-  background-color: blue;
-}
-
-#red {
-  background-color: red;
-}
-
-
-.navimage {
-  border-radius: 400px;
-  border: 0;
-  padding: 10px;
-  width: 50px;
-}
-
-#goalButton {
-  padding-top: 200px;
-  margin-top: 40px;
-  margin-bottom: -400px;
+  background: url(mountain.png) no-repeat center center fixed;
+  /*padding for static nav/footer*/
+  /*padding-top: 100px;*/
+  margin-bottom: 150px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .headline {
@@ -79,13 +38,133 @@ footer .navbar-fixed-bottom {
   margin-bottom: 10px;
 }
 
-/* About Page */
+.btn-primary {
+  border-radius: 80px;
+  border: 0;
+  padding: 18px;
+}
+
+
+/* Images */
+
+.roundedCorners {
+  border-radius: 400px;
+  border: 0;
+  padding: 10px;
+  width: 175px;
+}
+
+
+
+/* * * * * * * * * Landing Page * * * * * * * * */
+
+/*.main {
+  
+  background-color: rgba(184, 219, 255, 1);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}*/
+
+.fitbitLogo {
+  background: url(fitbit_connect.png) no-repeat;
+  opacity: 0.95;
+  padding-left: 141px;
+  padding-right: 141px;
+  margin-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+
+
+.fitbitLogo:hover {
+  opacity: 1;
+}
+
+
+
+
+/* * * * * * * * * Navbar * * * * * * * * */
+
+.navimage {
+  border-radius: 100px;
+  border: 0;
+  margin: 0 8px;
+  width: 28px;
+}
+
+/* Alert */
+.alert{
+  padding: 15px;
+  margin-bottom: 20px;
+  margin-top: -20px;
+  border: 0px;
+  border-radius: 0px
+}
+
+.alert-success {
+background-color: #56a9ed;
+/* border-color: #d6e9c6; */
+border-radius: 0px;
+border: 0;
+border-color: #56a9ed;
+color: #cee9ff;
+}
+
+.alert-warning {
+  background-color: #ffae00;
+  border-radius: 0px;
+  border: 0;
+  border-color: #ffae00;
+  color: #ffffff;
+}
+
+.vcenter {
+    /*display: inline-block;*/
+    vertical-align: middle;
+    float: none;
+}
+
+/* * * * * * * * * Footer * * * * * * * * */
+
+footer .navbar-fixed-bottom {
+  background-color: rgba(255, 255, 255, 1);
+  margin-bottom: -10px;
+  padding-top: 20px;
+}
+
+
+/* * * * * * * * * Goal Profile  * * * * * * * * */
+#goalButton {
+  padding-top: 200px;
+  margin-top: 40px;
+  margin-bottom: -400px;
+}
+
+
+
+/* * * * * * * * * About Page * * * * * * * * */
+/* Font Awesome Icons */
 .fa {
   padding-right: 5px;
 }
 
 
+/* * * * * * * * * Layout Testing * * * * * * * * */
 
+#green {
+  background-color: green;
+}
+
+#blue {
+  background-color: blue;
+}
+
+#red {
+  background-color: red;
+}
 
 
 
