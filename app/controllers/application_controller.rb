@@ -14,7 +14,9 @@ class ApplicationController < ActionController::Base
   end
 
   def plot_time
+    unless current_user.start_date.nil?
     @plot_time = fitgem_info.activity_on_date_range("tracker/distance", current_user.start_date, 'today')
+    end
   end
 
 
