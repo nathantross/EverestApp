@@ -18,7 +18,7 @@ class ContactController < ApplicationController
   def contact_send
     @contact = Contact.new contact_params
     ContactUsMailer.contact_us_email(@contact).deliver
-    redirect_to user_path(current_user), notice: "Your message was sent. Thank you for your inquiry."
+    redirect_to '/about', notice: "Your message was sent. Adventure is on its way!"
   end
 
 protected
