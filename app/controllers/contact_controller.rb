@@ -18,7 +18,6 @@ class ContactController < ApplicationController
   def contact_send
     @contact = Contact.new contact_params
     ContactUsMailer.contact_us_email(@contact).deliver
-    binding.pry
     redirect_to user_path(current_user), notice: "Your message was sent. Thank you for your inquiry."
   end
 
