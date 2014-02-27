@@ -1,115 +1,58 @@
 <%= render 'layouts/navbar' %>
-<br>
-<br>
-<br>
-<br>
 
-<div class="container">
-
-<h1 class="headline text-left">Welcome to Base Camp</h1>
-
-  <div class="row">
-    <div class="col-xs-12">
-      <hr>
+<!-- Main Profile Container -->
+<div class="mainProfile">
+  <div class="container">
+    <br>
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="headline text-center">Welcome to Base Camp</h1>
+      </div>
     </div>
-  </div>
 
-
-  <div class="row">
-
-
-    <!-- Column for Profile Picture -->
-    <div class="col-xs-3">
+    <!-- Profile Info -->
+    <div class="row text-left">
+      <div class="col-xs-3">
+      </div>
+      <div class="col-xs-2">
         <%= image_tag avatar, :class => "roundedCorners" %>
+      </div>
+      <div class="col-xs-5">
+        <h1><%= @user.name %></h1>
+        <h4>Joined on <%= @user.created_at %></h4>
+        <h4 class="fa fa-heart fa-1x" href="#"> Check out Fitbit.com</h4>
+      </div>
+      <div class="col-xs-1">
+      </div>
     </div>
-
-
-
-    <!-- Column for Profile Name and Data -->
-    <div class="col-xs-3">
-        <h2 class="subhead"><%= @user.name %></h2>
-        <h4 class="fa fa-bolt fa-3x"><strong> <%= distance %> Miles traveled all time!</strong></h4>
-        <h4 class 'fa fa-bold fa-3x'><strong> <%= climb %> total feet climbed!</strong></h4>
-
-        <h3><a class="fa fa-heart fa-1x" href="#">Follow Me</a></h3>
+    <div class="row">
+      <div class="col-xs-12"><br><br></div>
     </div>
-
-    <div class="col-xs-6">
-      <div><%= plot_time %></div>
     </div>
   </div>
+</div><!-- Close Container -->
 
-
+<!-- Section 2 Container -->
+  <!-- Distance section -->
+<div class="container">
   <div class="row">
-    <div class="col-xs-12">
+    <div class="col-xs-12 text-center">
+      <img class="fa fa-bolt fa-5x" />
+      <h1 class="fa fa-bolt fa-5x sectionTitle"><strong> <%= distance %></strong></h1>
+      <h1 class="sectionHeadline text-center"> All time miles!</h1>
       <hr>
     </div>
   </div>
 
-
-
-<!-- Morris Line Chart -->
-<div id="goalchart" style="height: 400px; width: 100%;"></div>
-
-<!-- Morris Donut Chart -->
-
-
+  <!-- Climb total -->
   <div class="row">
-    <div class="col-xs-12">
+    <div class="col-xs-12 text-center">
+      <h1 class="fa fa-flag fa-5x sectionTitle"><strong> <%= climb %></strong></h1>
+      <h1 class="sectionHeadline text-center"> Total feet climbed!</h1>
       <hr>
     </div>
   </div>
-
-
-<!-- Morris Bar Graph -->
-<div id="bar-example"></div>
-</div>
-<div class=".col-xs-3 text-center">
-  </div>
-
-
-
-
-</div>
-
+</div><!-- Close Container -->
 
 <%= render 'layouts/footerstatic' %>
-
-
-
-
-
-
-
-<script>
-
-// Bar Graph
-
-Morris.Bar({
-  element: 'bar-example',
-  data: [
-    { y: '2006', a: 100, b: 90 },
-    { y: '2007', a: 75,  b: 65 },
-    { y: '2008', a: 50,  b: 40 },
-    { y: '2009', a: 75,  b: 65 },
-    { y: '2010', a: 50,  b: 40 },
-    { y: '2011', a: 75,  b: 65 },
-    { y: '2012', a: 100, b: 90 }
-  ],
-  xkey: 'y',
-  ykeys: ['a', 'b'],
-  labels: ['Series A', 'Series B']
-});
-
-
-</script>
-
-
-
-
-
-
-
-
-
 

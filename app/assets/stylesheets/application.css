@@ -169,6 +169,26 @@ footer .navbar {
   padding-right: 5px;
 }
 
+/* * * * * * * * * User Show Page * * * * * * * * */
+
+
+.mainProfile {
+  background-color: #e3b604;
+  margin-top: -20px;
+}
+
+.sectionTitle {
+  font-size: 120px;
+  padding-bottom: 0px;
+  padding-top: 30px;
+  margin-bottom: 0px;
+}
+
+.sectionHeadline {
+  font-size: 60px;
+  margin-top: 10px;
+  padding-bottom: 30px;
+}
 
 /* * * * * * * * * Layout Testing * * * * * * * * */
 
