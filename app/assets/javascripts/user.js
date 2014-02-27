@@ -39,19 +39,22 @@ $(function(){
         });
     });
   
+    $(".area_chart").click(function(){
+      if ($("#goalarea").hasClass("swap") === true) {
+        $("#goalarea").toggleClass("swap");
+        $("#goaldonut").toggleClass("swap");
+      }
+    });
 
 
-$(".area_chart").click(function(){
-  $("#goalarea").toggleClass("swap");
-  $("#goaldonut").toggleClass("swap");
-});
-
-
-
-$(".donut_chart").click(function(){
-  $("#goaldonut").toggleClass("swap");
-  $("#goalarea").toggleClass("swap");
-});
+  
+    $(".donut_chart").click(function(){
+      if ($("#goaldonut").hasClass("swap") === true) {
+        $("#goaldonut").toggleClass("swap");
+        $("#goalarea").toggleClass("swap");
+      }
+    });
+  
 
 });
 
