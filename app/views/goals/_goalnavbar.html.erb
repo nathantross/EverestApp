@@ -13,7 +13,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a class="area_chart navbar-link">Area Chart</a></li>
+        <li><a class="area_chart">Area Chart</a></li>
         <li><a class="donut_chart">Donut Chart</a></li>
       </ul>
 
@@ -24,10 +24,12 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Goal Settings <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Quit Goal</a></li>
-            <li><a href="#">Restart Goal</a></li>
+            <li><%= link_to "Quit Goal", quit_path, data: { no_turbolink: true }  %></li>
+            <li><%= link_to "Restart Goal", restart_path, data: { no_turbolink: true } %></li>
                 <li class="divider"></li>
-            <li><%= link_to "Delete Goal", @goal, method: :delete %></li>
+            <!--<li><%= link_to "Delete Goal", @goal, method: :delete %></li>
+                 Do we want to have a user able to delete any goal that is in the DB
+                 or just quit their goal?-->
           </ul>
         </li>
       </ul>
