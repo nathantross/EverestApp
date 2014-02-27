@@ -1,7 +1,7 @@
 
 // Area chart
 $(function(){
-  $(".clickme").click(function(){$.get("/run.json").done(function(res){
+  $(".area_chart").click(function(){$.get("/run.json").done(function(res){
 
     // an array of hashes with two keys each, a date and a value for distance
     var runData = res.points;
@@ -27,8 +27,7 @@ $(function(){
   });
 });
   // Donut
-  $(".metoo").click(function(){$.get("/donut.json").done(function(res){
-      console.log(' I am back : ' + res);
+  $(".donut_chart").click(function(){$.get("/donut.json").done(function(res){
       new Morris.Donut({
         element: 'goaldonut',
         data: [
