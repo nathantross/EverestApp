@@ -9,3 +9,7 @@ body {
   /*padding for static nav/footer*/
   /*padding-top: 100px;*/
 }
+
+nav .btn {
+  margin-top: 8px;
+}
