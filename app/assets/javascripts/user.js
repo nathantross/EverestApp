@@ -1,7 +1,7 @@
 
 // Area chart
 $(function(){
-  $.get("/users/run.json").done(function(res){
+  $(".clickme").click(function(){$.get("/users/run.json").done(function(res){
 
     // an array of hashes with two keys each, a date and a value for distance
     var runData = res.points;
@@ -25,20 +25,21 @@ $(function(){
       labels: ['Miles towards goal']
     });
   });
-
+});
   // Donut
-$.get("/donut").done(function(res){
-    
+  $(".metoo").click(function(){$.get("/donut.json").done(function(res){
+      console.log(' I am back : ' + res);
       new Morris.Donut({
-      element: 'goaldonut',
-      data: [
-        {label: "Distance to go", value: res.percent_left},
-        {label: "Distance covered", value: res.percent_done}
-      ],
-      // adds a % sign to the inside of the donut, along with the value
-      formatter: function (val, data) { return  val + "%";}
-    });
+        element: 'goaldonut',
+        data: [
+          {label: "Distance to go", value: res.percent_left},
+          {label: "Distance covered", value: res.percent_done}
+        ],
+        // adds a % sign to the inside of the donut, along with the value
+        formatter: function (val, data) { return  val + "%";}
+      });
   });
+});
   
 
 

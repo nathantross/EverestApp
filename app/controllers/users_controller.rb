@@ -14,7 +14,14 @@ class UsersController < ApplicationController
     # returns an array of hashes each with two keys,
     # one for date and a value for distance
     run_points = plot["activities-tracker-distance"]
-
+    
+    # adds previous points to each subsequent point
+    progress = 0
+    run_points.map do |point|
+      progress += point['value'].to_f  
+      point['value'] = progress
+    end 
+    
     # the high point of the graph, which corresponds to the 
     # total distance of the goal
     max_val = current_user.goal.distance 
@@ -30,6 +37,9 @@ class UsersController < ApplicationController
   end
 
   def donut
+
+    # render json: { "result" => "OK" }
+
     plot = plot_time
     run_points = plot["activities-tracker-distance"]
     max_val = current_user.goal.distance
@@ -37,23 +47,23 @@ class UsersController < ApplicationController
     # creates an array from the distance values of each point
     acc = []
     run_points.each do |point|
-      acc.push(point.fetch('value'))
+      acc.push(point.fetch('value').to_f)
     end
 
     # returns a sum of the points we just made into an array
     completed = acc.inject do |sum, value|
                   sum + value
                 end
-                
-    # converts the sum into a percent of the total distance of the goal
-    percent_done = (completed/max_val) * 100
-    percent_left = 100 - percent_done
 
+    # converts the sum into a percent of the total distance of the goal
+    percent_done = ((completed * 100 / max_val)).to_i
+    percent_left = 100 - percent_done
+    
     @donut_results = {
       percent_done: percent_done,
       percent_left: percent_left
     }
-
+    
     respond_to do |f|
       f.json { render :json => @donut_results }
     end
