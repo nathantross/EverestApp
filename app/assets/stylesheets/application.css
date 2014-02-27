@@ -29,7 +29,7 @@
 .headline {
   font-family: 'Bowlby One', Arial, sans-serif; font-weight: 400; 
   font-size: 60px;
-  padding-bottom: 10px;
+  padding-bottom: 0px;
 }
 
 .subhead  {
@@ -54,7 +54,9 @@
   width: 175px;
 }
 
-
+.space {
+  padding-bottom: 15px;
+}
 
 /* * * * * * * * * Landing Page * * * * * * * * */
 
@@ -70,17 +72,17 @@
 .fitbitLogo {
   background: url(fitbit_connect.png) no-repeat;
   opacity: 0.95;
-  padding-left: 141px;
-  padding-right: 141px;
-  margin-top: 50px;
-  padding-bottom: 50px;
-  text-align: center;
+
 }
-
-
 
 .fitbitLogo:hover {
   opacity: 1;
+}
+
+/* Main Logo */
+.everestLogo {
+  width: 130px;
+  opacity: 0.95;
 }
 
 
@@ -88,6 +90,13 @@
 
 /* * * * * * * * * Navbar * * * * * * * * */
 
+.logo {
+   width: 20px;
+   padding-bottom: 5px;
+   opacity: 0.8;
+}
+
+/* User's Profile Image in Nav */
 .navimage {
   border-radius: 100px;
   border: 0;
@@ -160,6 +169,26 @@ footer .navbar {
   padding-right: 5px;
 }
 
+/* * * * * * * * * User Show Page * * * * * * * * */
+
+
+.mainProfile {
+  background-color: #e3b604;
+  margin-top: -20px;
+}
+
+.sectionTitle {
+  font-size: 120px;
+  padding-bottom: 0px;
+  padding-top: 30px;
+  margin-bottom: 0px;
+}
+
+.sectionHeadline {
+  font-size: 60px;
+  margin-top: 10px;
+  padding-bottom: 30px;
+}
 
 /* * * * * * * * * Layout Testing * * * * * * * * */
 

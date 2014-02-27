@@ -1,35 +1,33 @@
 <%= render 'layouts/navbar' %>
 <body class="main">
-<div class="main">
-<br>
-<br>
-<br>
+  <div class="main">
+  <br>
+  <br>
+  <br>
 
-<br>
-<br>
-<br>
+  <br>
+  <br>
+  <br>
 
-<br>
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 text-center">
-      <i class="fa fa-cloud fa-5x"></i>
-    <h1 class="headline text-center">Everest App</h1>
-    <h3>This is explanation copy about how awesome Everest App is</h3>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <img class="everestLogo" src="assets/everest_logo.png" />
+      <h1 class="headline text-center">Everest App</h1>
+      <h3 class="space">Takes your short term goals, and show how big they really are</h3>
+      </div>
     </div>
-        <br>
-      <div class=".col-xs-12 text-center">
-        <% if current_user %>
-        <% else %>
-        <br>
-        <br>
-        <br>
-          <%= link_to "", "/auth/fitbit", class: "fitbitLogo" %>
-        <% end %>
-          
+    <div class="row">
+        <div class=".col-xs-12 text-center">
+          <% if current_user %>
+          <% else %>
+            <%= link_to "", "/auth/fitbit", class: "fitbitLogo" %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 </div>
 
 <%= render 'layouts/footer' %>
