@@ -43,16 +43,6 @@ class GoalsController < ApplicationController
     @goal.input_interpretation = answer
     @goal.distance = answer.to_f
     @goal.save
-
-
-  end
-
-  def update
-    new_goal = Goal.find(params[:id])
-    current_user.goal = new_goal
-    current_user.start_date = DateTime.now.strftime("%Y-%m-%d")
-    User.find(current_user.id).update_attributes(:goal => current_user.goal, :start_date => current_user.start_date)
-
   end
 
   def update
