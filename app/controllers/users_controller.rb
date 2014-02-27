@@ -18,7 +18,5 @@ class UsersController < ApplicationController
      respond_to do |f|
       f.json { render :json => @results }
     end
-
    end
-
 end
