@@ -1,5 +1,16 @@
 /* * * * * * * * * Session New * * * * * * * * */
 
+body {
+  background: url() no-repeat center center fixed;
+  /*padding for static nav/footer*/
+  /*padding-top: 100px;*/
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
 /* Fitbit Connect Button */
 
 .fitbitLogo {
