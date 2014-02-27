@@ -41,7 +41,7 @@ class GoalsController < ApplicationController
 
   end
 
-  def update
+  def add
     # first two lines take the goal from the goals page and add it to a user's
     # goal. Currently we have one goal per user at a time.
     new_goal = Goal.find(params[:id])

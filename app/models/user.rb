@@ -29,5 +29,30 @@ class User < ActiveRecord::Base
               )
   end
 
+  def run_points
+    plot = plot_time
+
+      # returns an array of hashes each with two keys,
+      # one for date and a value for distance
+      run_points = plot["activities-tracker-distance"]
+      
+      # adds previous points to each subsequent point
+      progress = 0
+      run_points.map do |point|
+        progress += point['value'].to_f  
+        point['value'] = progress
+      end 
+      
+      # the high point of the graph, which corresponds to the 
+      # total distance of the goal
+      max_val = current_user.goal.distance 
+      results = {
+        points: run_points,
+        max_val: max_val,
+      }
+  end
+
+
+
 end
       
