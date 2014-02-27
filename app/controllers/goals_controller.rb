@@ -3,6 +3,7 @@ class GoalsController < ApplicationController
 
   def index
     @goals = Goal.all
+    # where goal.id != current_user.goal_id
   end
 
   def new
@@ -46,6 +47,7 @@ class GoalsController < ApplicationController
   end
 
   def update
+    #ADD
     # first two lines take the goal from the goals page and add it to a user's
     # goal. Currently we have one goal per user at a time.
     new_goal = Goal.find(params[:id])
