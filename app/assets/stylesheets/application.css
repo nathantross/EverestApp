@@ -15,7 +15,7 @@
 
 /* * * * * * * * * Main * * * * * * * * */
 
-body {
+.main {
   background: url(mountain.png) no-repeat center center fixed;
   /*padding for static nav/footer*/
   /*padding-top: 100px;*/
@@ -132,7 +132,16 @@ color: #cee9ff;
 footer .navbar-fixed-bottom {
   background-color: rgba(255, 255, 255, 1);
   margin-bottom: -10px;
-  padding-top: 20px;
+  padding-top: 25px;
+}
+
+footer .navbar {
+  background-color: rgba(255, 255, 255, 1);
+  margin-bottom: 0px;
+  padding-top: 25px;
+  margin-top: 60px;
+  border-radius: 0px;
+  width: 100%;
 }
 
 
