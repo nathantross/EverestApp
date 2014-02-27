@@ -30,6 +30,7 @@ gem 'omniauth-fitbit'
 gem 'wolfram-alpha'
 
 group :production do
+  gem 'rails_serve_static_assets'
   gem 'rails_12factor'
 end
 
@@ -55,3 +56,5 @@ group :test do
   gem 'launchy'
   gem 'selenium-webdriver'
 end
+
+gem 'unicorn'

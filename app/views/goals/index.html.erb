@@ -5,20 +5,124 @@
 <br>
 
 <div class="container">
+
+<h1 class="headline text-center">Welcome to Goals Wall</h1>
+
   <div class="row">
-    <div class=".col-xs-3 text-center">
+    <div class="col-xs-12">
+    </div>
+  </div>
 
 
-<h1 class="headline">Current Goals</h1>
+  <div class="row">
+    <div class="col-xs-2">
+    </div>
 
-<div class=".col-xs-12 text-center">
-  <%= link_to "Make a new goal", "/goals/new", class: "btn grow btn-primary" %>
-</div>
- 
+    <div class="col-xs-8">
+      <h1>Your Goals</h1>
+      <hr>
+    </div>
+
+    <div class="col-xs-2">
+    </div>
+
+  </div>
+
+<!-- section 1 -->
+  <div class="row">
+    <div class="col-xs-2">
+    </div>
+
+    <div class="col-xs-5">
+      <h3><a href="#">Climb Empire State Building</a></h3>
+      <h3 class="fa fa-sun-o fa-2x">20204.0 Miles</h3>
+    </div>
+
+    <div class="col-xs-3">
+      <%= link_to "View Stats", "/goals/new", class: "btn grow btn-primary" %>
+    </div>
+
+    <div class="col-xs-2">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-2">
+    </div>
+
+    <div class="col-xs-8">
+      <hr>
+    </div>
+
+    <div class="col-xs-2">
+    </div>
+  </div>
+
+
+<!-- section 2 -->
+  <div class="row">
+    <div class="col-xs-2">
+    </div>
+
+    <div class="col-xs-5">
+      <h3><a href="#">Climb Empire State Building</a></h3>
+      <h3 class="fa fa-sun-o fa-2x"> 20204.0 Miles</h3>
+    </div>
+
+    <div class="col-xs-3">
+      <%= link_to "Create", "/goals/new", class: "btn grow btn-primary" %>
+    </div>
+
+    <div class="col-xs-2">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-0">
+    </div>
+
+    <div class="col-xs-12">
+      <hr>
+    </div>
+
+    <div class="col-xs-0">
+    </div>
+  </div>
+
+
+
+
+
+  <div class="row">
+    <div class="col-xs-2">
+    </div>
+
+    <div class="col-xs-8">
+      <h1 class="headline text-center">All Amazing Goals</h1>
+    </div>
+
+    <div class="col-xs-2">
+    </div>
+
+  </div>
+
+    
+
 <% @goals.each do |goal| %>
   <div class="row">
-    <div class="span3 offset1">
-      <h1><a href="<%=goal_path(goal.id)%>"><%= goal.name%></a></h1>
+    <div class="col-xs-2">
+    </div>
+  <div class="col-xs-8 text-center">
+    <div class="thumbnail ">
+      <div class="caption">
+        <h1 class="goalheadline"><%= goal.name%></h1>
+        <h2><%= goal.distance%> Miles</h2>
+        <p><a href="<%=goal_path(goal.id)%>", class="btn btn-primary btn-lg btn-block" >Check out this goal</a></p>
+      </div>
+    </div>
+  </div>
+
+    <div class="col-xs-2">
     </div>
   </div>
 <% end %>
@@ -27,12 +131,9 @@
 
 
 
-
-
-
-    </div>
-  </div>
 </div>
-<%= render 'layouts/footerstatic' %>
+</div>
 
+
+<%= render 'layouts/footerstatic' %>
 

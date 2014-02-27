@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140225230032) do
+=======
+ActiveRecord::Schema.define(version: 20140226014053) do
+>>>>>>> 041caaf9370bdfa2e99fde4431f316ef85950f20
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +23,7 @@ ActiveRecord::Schema.define(version: 20140225230032) do
   create_table "goals", force: true do |t|
     t.string   "name"
     t.string   "input_interpretation"
+    t.float    "distance"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.float    "distance"
@@ -31,10 +36,13 @@ ActiveRecord::Schema.define(version: 20140225230032) do
     t.string   "uid"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "goal_id"
     t.string   "avatar"
     t.string   "oauth_token"
     t.string   "oauth_secret"
+    t.integer  "goal_id"
+    t.text     "start_date"
   end
+
+  add_index "users", ["goal_id"], name: "index_users_on_goal_id", using: :btree
 
 end

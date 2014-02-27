@@ -5,8 +5,20 @@ class UsersController < ApplicationController
  
    def show
      @user = User.find(params[:id])
-     # @distance = fitgem_info.activity_statistics['lifetime']['tracker']['distance']
-     # @avatar = fitgem_info.user_info['user']['avatar']
-     # @climb = fitgem_info.activity_statistics['lifetime']['tracker']['floors'] * 10
+   end
+
+   def run
+     plot = plot_time
+     run_points = plot["activities-tracker-distance"]
+     max_val = current_user.goal.distance * 5280
+     @results = {
+      points: run_points,
+      max_val: max_val,
+     }
+     respond_to do |f|
+      f.json { render :json => @results }
     end
+
+   end
+
 end

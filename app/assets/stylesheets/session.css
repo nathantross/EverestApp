@@ -1,22 +1,21 @@
-.headline {
-  font-family: 'Bowlby One', Arial, sans-serif; font-weight: 400; 
-  font-size: 60px;
-}
+/* * * * * * * * * Session New * * * * * * * * */
 
-.main {
-  background: url(/assets/mountain.png) no-repeat center center fixed;
-  background-color: rgba(184, 219, 255, 1);
+body {
+  background: url() no-repeat center center fixed;
+  /*padding for static nav/footer*/
+  /*padding-top: 100px;*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 1000px;
-  margin-top: -50px;
 }
 
+
+/* Fitbit Connect Button */
+
 .fitbitLogo {
-  background: url(/assets/fitbit_connect.png) no-repeat;
-  opacity: 0.95;
+  background: url(fitbit_connect.png) no-repeat;
+  opacity: 0.92;
   padding-left: 141px;
   padding-right: 141px;
   margin-top: 50px;
@@ -24,11 +23,22 @@
   text-align: center;
 }
 
-
-
 .fitbitLogo:hover {
+
   opacity: 1;
+  padding-left: 141px;
+  padding-right: 141px;
+  margin-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
 }
 
+.fitbitLogo:active {
 
-/*background-image: url(image-path('mountain.png'));*/
+  opacity: 0.95;
+  padding-left: 141px;
+  padding-right: 141px;
+  margin-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+}

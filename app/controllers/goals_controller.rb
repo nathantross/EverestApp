@@ -18,7 +18,25 @@ class GoalsController < ApplicationController
 
     @response = client.query query["name"]
     result = @response.find { |pod| pod.id == "Result" }
-    answer = result.subpods.first.plaintext
+    if !result.nil?
+      answer = result.subpods.first.plaintext
+      @goal = Goal.new
+      @goal.name = query["name"]
+      @goal.input_interpretation = answer
+      @goal.distance = answer.to_f
+ 
+      if answer.include? "miles"
+        @goal.save 
+        render :show
+      else
+        flash[:error]='This does not return a distance in miles. Try again.'
+        render :new
+      end
+    else
+      answer = nil
+      flash[:error] = "No answer. Please try again."
+      redirect_to new_goal_path
+    end
 
     @goal = Goal.new
     @goal.name = query["name"]
@@ -26,17 +44,19 @@ class GoalsController < ApplicationController
     @goal.distance = answer.to_f
     @goal.save
 
-    render :show
+
   end
+
+  def update
+    new_goal = Goal.find(params[:id])
+    current_user.goal = new_goal
+    current_user.start_date = DateTime.now.strftime("%Y-%m-%d")
+    User.find(current_user.id).update_attributes(:goal => current_user.goal, :start_date => current_user.start_date)
+
+    redirect_to user_path(current_user.id), :notice => "Goal added!"
+  end  
 
   def show
     @goal = Goal.find(params[:id])
   end
-
-  def destroy
-    @goal = Goal.find(params[:id])
-    @goal.delete
-    redirect_to goals_path
-  end
-
 end
