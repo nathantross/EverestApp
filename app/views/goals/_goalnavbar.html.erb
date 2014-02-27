@@ -25,11 +25,10 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Goal Settings <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><%= link_to "Quit Goal", quit_path, data: { no_turbolink: true }  %></li>
+            <li class="divider"></li>
             <li><%= link_to "Restart Goal", restart_path, data: { no_turbolink: true } %></li>
-                <li class="divider"></li>
-            <!--<li><%= link_to "Delete Goal", @goal, method: :delete %></li>
-                 Do we want to have a user able to delete any goal that is in the DB
-                 or just quit their goal?-->
+                
+            
           </ul>
         </li>
       </ul>

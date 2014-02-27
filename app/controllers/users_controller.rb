@@ -7,6 +7,22 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def restart
+    current_user.start_date = DateTime.now.strftime("%Y-%m-%d")
+    User.find(current_user.id).update_attributes(:start_date => current_user.start_date)
+
+    redirect_to user_path(current_user.id), :notice => "Goal restarted, good luck!"
+  end
+
+  def quit
+    current_user.goal = nil
+    current_user.start_date = nil
+
+    User.find(current_user.id).update_attributes(:goal => current_user.goal, :start_date => current_user.start_date)
+
+    redirect_to user_path(current_user.id), :notice => "Time to pick another goal?"
+  end
+
   # method to provide json data for graphing
   def run
     plot = plot_time
