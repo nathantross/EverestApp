@@ -1,4 +1,5 @@
 EverestApp::Application.routes.draw do
+
   # Home
   root :to => "sessions#new"
 
@@ -7,10 +8,11 @@ EverestApp::Application.routes.draw do
   get '/logout', :to => 'sessions#destroy'
 
   # Users
-  get '/users/run', to: 'users#run'
+  get '/run', to: 'users#run'
+  get '/donut', to: 'users#donut'
   get '/user', to: 'users#index', as: 'users'
   get 'user/:id', to: 'users#show', as: 'user'
-  get "/about" => "users#about", as: 'about'
+  get '/about', to: 'users#about', as: 'about'
 
   # Contact
   get '/contact', to: 'contact#new', as: 'contacts'
