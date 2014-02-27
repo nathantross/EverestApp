@@ -13,6 +13,8 @@ EverestApp::Application.routes.draw do
   get '/user', to: 'users#index', as: 'users'
   get 'user/:id', to: 'users#show', as: 'user'
   get '/about', to: 'users#about', as: 'about'
+  get '/quit', to: 'users#quit', as: 'quit'
+  get '/restart', to: 'users#restart', as: 'restart'
 
   # Contact
   get '/contact', to: 'contact#new', as: 'contacts'
