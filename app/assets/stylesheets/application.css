@@ -83,11 +83,22 @@
   opacity: 1;
 }
 
+.everestLogo {
+  width: 200px;
 
+   opacity: 0.8;
+}
 
 
 /* * * * * * * * * Navbar * * * * * * * * */
 
+.logo {
+   width: 20px;
+   padding-bottom: 5px;
+   opacity: 0.8;
+}
+
+/* User's Profile Image in Nav */
 .navimage {
   border-radius: 100px;
   border: 0;
