@@ -19,4 +19,7 @@ class UsersController < ApplicationController
       f.json { render :json => @results }
     end
    end
+
+   def contact
+   end
 end
