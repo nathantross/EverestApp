@@ -19,8 +19,8 @@
       </div>
       <div class="col-xs-5">
         <h1><%= @user.name %></h1>
-        <h4>Joined on <%= @user.created_at %></h4>
-        <h4 class="fa fa-heart fa-1x" href="#"> Check out Fitbit.com</h4>
+        <h4>Joined on <%= @user.created_at.to_date %></h4>
+        <h4 class="fa fa-heart fa-1x"><a class="blackLink" href="https://www.fitbit.com"> Check out Fitbit.com</a></h4>
       </div>
       <div class="col-xs-1">
       </div>
@@ -66,9 +66,8 @@
     <!-- Total Earth -->
   <div class="row">
     <div class="col-xs-12 text-center">
-      <h1 class="fa fa-globe fa-5x sectionTitle"><strong> <%= distance / 24901 %></strong></h1>
-      <h1 class="sectionHeadline text-center"> Times you've walked the Earth!</h1>
-      <hr>
+      <h1 class="fa fa-globe fa-5x sectionTitle"><strong> <%= (distance / 24901 * 100).round(2) %>%</strong></h1>
+      <h1 class="sectionHeadline text-center"> Walked around the Earth!</h1>
     </div>
   </div>
 </div><!-- Close Container -->

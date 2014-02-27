@@ -190,6 +190,14 @@ footer .navbar {
   padding-bottom: 30px;
 }
 
+.blackLink {
+  color: #333;
+}
+
+.blackLink:hover {
+  color: #333;
+}
+
 /* * * * * * * * * Layout Testing * * * * * * * * */
 
 #green {
