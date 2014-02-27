@@ -70,7 +70,7 @@
     </div>
 
     <div class="col-xs-3">
-      <%= link_to "View Stats", "/goals/new", class: "btn grow btn-primary" %>
+      <%= link_to "Create", "/goals/new", class: "btn grow btn-primary" %>
     </div>
 
     <div class="col-xs-2">
@@ -116,7 +116,7 @@
     <div class="thumbnail ">
       <div class="caption">
         <h1 class="goalheadline"><%= goal.name%></h1>
-        <h2>Distance: 2000 Miles</h2>
+        <h2><%= goal.distance%> Miles</h2>
         <p><a href="<%=goal_path(goal.id)%>", class="btn btn-primary btn-lg btn-block" >Check out this goal</a></p>
       </div>
     </div>

@@ -14,6 +14,7 @@ EverestApp::Application.routes.draw do
   get '/goals/new', to: 'goals#new', as: 'new_goal'
   post '/goals', to: 'goals#create'
   get '/goals/:id', to: 'goals#show', as: 'goal'
+  patch '/goals/:id', to: 'goals#update'
 
 end
 
