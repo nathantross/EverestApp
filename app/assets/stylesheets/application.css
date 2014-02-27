@@ -29,7 +29,7 @@
 .headline {
   font-family: 'Bowlby One', Arial, sans-serif; font-weight: 400; 
   font-size: 60px;
-  padding-bottom: 10px;
+  padding-bottom: 0px;
 }
 
 .subhead  {
@@ -54,7 +54,9 @@
   width: 175px;
 }
 
-
+.space {
+  padding-bottom: 15px;
+}
 
 /* * * * * * * * * Landing Page * * * * * * * * */
 
@@ -70,24 +72,20 @@
 .fitbitLogo {
   background: url(fitbit_connect.png) no-repeat;
   opacity: 0.95;
-  padding-left: 141px;
-  padding-right: 141px;
-  margin-top: 50px;
-  padding-bottom: 50px;
-  text-align: center;
+
 }
-
-
 
 .fitbitLogo:hover {
   opacity: 1;
 }
 
+/* Main Logo */
 .everestLogo {
-  width: 200px;
-
-   opacity: 0.8;
+  width: 130px;
+  opacity: 0.95;
 }
+
+
 
 
 /* * * * * * * * * Navbar * * * * * * * * */
