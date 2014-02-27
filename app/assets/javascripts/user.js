@@ -1,7 +1,7 @@
 
 // Area chart
 $(function(){
-  $(".clickme").click(function(){$.get("/users/run.json").done(function(res){
+  $(".clickme").click(function(){$.get("/run.json").done(function(res){
 
     // an array of hashes with two keys each, a date and a value for distance
     var runData = res.points;

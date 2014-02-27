@@ -1,5 +1,5 @@
 EverestApp::Application.routes.draw do
-  get '/users/run', to: 'users#run'
+  get '/run', to: 'users#run'
   get '/donut', to: 'users#donut'
   resources :users
 
