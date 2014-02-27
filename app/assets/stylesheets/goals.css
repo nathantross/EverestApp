@@ -9,3 +9,11 @@ body {
   /*padding for static nav/footer*/
   /*padding-top: 100px;*/
 }
+
+#goalForm {
+  width: 80%;
+}
+
+nav .btn {
+  margin-top: 8px;
+}

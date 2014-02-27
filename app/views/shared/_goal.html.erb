@@ -1,15 +1,22 @@
 <div class="row">
-<div class=".col-xs-3 text-left">
-</div>
-<div class=".col-xs-6 text-left form-group">
+  <div class="col-xs-1 text-left">
+  </div>
 
-<%= form_for @goal do |f| %>
-  <h3><%= f.label :name %></h3>
-  <%= f.text_field :name, class: "form-control", placeholder: "Ex. Distance from Boston to New York" %>
-  <%= f.submit 'Get Started', class: "btn btn-primary btn-lg" %></br>
-<% end %>
-</div>
-<div class=".col-xs-3 text-left">
-</div>
+  <div class="col-xs-10">
+    <div class="navbar-form">
+      <%= form_for @goal do |f| %>
 
-</div>
+        <div class="input-group-lg">
+        <%= f.text_field :name, id: "goalForm", class: "form-control", placeholder: "Ex. Distance from Boston to New York" %>
+
+        <%= f.submit 'Get Started', class: "btn btn-primary btn-lg" %></br>
+              </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="col-xs-1 text-left">
+  </div>
+
+  </div>
+
