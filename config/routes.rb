@@ -7,12 +7,10 @@ EverestApp::Application.routes.draw do
   get '/logout', :to => 'sessions#destroy'
 
   # Users
-  get "/about" => "users#about"
   get '/users/run', to: 'users#run'
   get '/user', to: 'users#index', as: 'users'
   get 'user/:id', to: 'users#show', as: 'user'
   get "/about" => "users#about", as: 'about'
-  get '/users/run', to: 'users#run'
 
   # Contact
   get '/contact', to: 'contact#new', as: 'contacts'
