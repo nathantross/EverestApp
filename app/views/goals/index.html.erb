@@ -117,8 +117,8 @@
     <div class="thumbnail ">
       <div class="caption">
         <h1 class="goalheadline"><%= goal.name%></h1>
-        <h2><%= goal.distance%> Miles</h2>
-        <p><a href="<%=goal_path(goal.id)%>", class="btn btn-primary btn-lg btn-block" >Check out this goal</a></p>
+        <h2>Distance: <%= goal.distance %></h2>
+        <p><%= link_to "Your goal!!", goal_path(goal.id), class: "btn btn-primary btn-lg btn-block", data: { no_turbolink: true } %></p>
       </div>
     </div>
   </div>

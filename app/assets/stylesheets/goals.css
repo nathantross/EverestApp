@@ -17,3 +17,8 @@ body {
 nav .btn {
   margin-top: 8px;
 }
+
+/* Sets Graph to not show */
+.swap {
+  display: none;
+}
