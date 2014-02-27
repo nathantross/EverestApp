@@ -14,9 +14,6 @@ g3 = goals << Goal.create(name: "New York/Los Angeles", input_interpretation: "2
 g4 = goals << Goal.create(name: "Earth/Moon", input_interpretation: "238900 miles", distance: 238900)
 g5 = goals << Goal.create(name: "Mount Killimanjaro Marangu Route", input_interpretation: "40 miles", distance: 40)
 g6 = goals << Goal.create(name: "The center of the Earth", input_interpretation: "3958.8 miles", distance: 3958.8)
-goals << Goal.create(name: "New York/Los Angeles", input_interpretation: "2448.29 miles", distance: 2448.29)
-goals << Goal.create(name: "Earth/Moon", input_interpretation: "238900 miles", distance: 238900)
-goals << Goal.create(name: "The center of the Earth", input_interpretation: "3958.8 miles", distance: 3958.8)
 
 users = []
 
