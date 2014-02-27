@@ -16,10 +16,10 @@
 /* * * * * * * * * Main * * * * * * * * */
 
 .main {
-  background: url(mountain.png) no-repeat center center fixed;
+  background: url(mountain4.png) no-repeat center center fixed;
   /*padding for static nav/footer*/
   /*padding-top: 100px;*/
-  margin-bottom: 150px;
+  margin-bottom: 0px;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
