@@ -1,7 +1,7 @@
-
-// Area chart
 $(function(){
-  $(".area_chart").click(function(){$.get("/run.json").done(function(res){
+
+  // Area chart
+  $.get("/run.json").done(function(res){
 
     // an array of hashes with two keys each, a date and a value for distance
     var runData = res.points;
@@ -11,7 +11,7 @@ $(function(){
 
     new Morris.Area({
       // ID of the element in which to draw the chart.
-      element: 'goalchart',
+      element: 'goalarea',
       // Chart data records -- each entry in this array corresponds to a point on
       // the chart.
       data: runData,
@@ -25,9 +25,9 @@ $(function(){
       labels: ['Miles towards goal']
     });
   });
-});
+
   // Donut
-  $(".donut_chart").click(function(){$.get("/donut.json").done(function(res){
+  $.get("/donut.json").done(function(res){
       new Morris.Donut({
         element: 'goaldonut',
         data: [
@@ -36,10 +36,22 @@ $(function(){
         ],
         // adds a % sign to the inside of the donut, along with the value
         formatter: function (val, data) { return  val + "%";}
-      });
-  });
-});
+        });
+    });
   
 
 
+$(".area_chart").click(function(){
+  $("#goalarea").toggleClass("swap");
+  $("#goaldonut").toggleClass("swap");
 });
+
+
+
+$(".donut_chart").click(function(){
+  $("#goaldonut").toggleClass("swap");
+  $("#goalarea").toggleClass("swap");
+});
+
+});
+

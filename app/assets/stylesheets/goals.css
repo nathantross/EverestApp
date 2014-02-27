@@ -9,3 +9,6 @@ body {
   /*padding for static nav/footer*/
   /*padding-top: 100px;*/
 }
+.swap {
+  display: none;
+}
