@@ -116,6 +116,13 @@
           <h1 class="goalheadline"><%= goal.name%></h1>
           <h2>Distance: <%= goal.distance %></h2>
           <p><%= link_to "Make this your goal!", goal_path(goal.id), class: "btn btn-primary btn-lg btn-block", data: { no_turbolink: true } %></p>
+
+
+            <form method="patch" action="add" class="button_to">
+                  <div><input value="add" type="submit" /></div>
+                </form>
+
+
         </div>
       </div>
     </div>
