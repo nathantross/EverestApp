@@ -19,8 +19,8 @@
             <h1>Your Goal</h1>
             <div class="thumbnail ">
               <div class="caption">
-                <h1 class="goalheadline"><%=current_user.goal.name%></h1>
-                <h2><%=current_user.goal.distance%> Miles</h2>
+                <h1 class="goalheadline"><%= current_user.goal.name %></h1>
+                <h2><%= current_user.goal.distance %> Miles</h2>
                 <br>
                 <p><%= link_to "View Your Goal", goal_path(current_user.goal_id) ,class: "btn btn-lg btn-primary btn-block", data: { no_turbolink: true } %></p>
               </div>
@@ -84,15 +84,15 @@
     
 
 <% @goals.each do |goal| %>
-  <% unless goal == current_user.goal%>
+  <% unless goal == current_user.goal %>
     <div class="row">
       <div class="col-xs-2">
       </div>
     <div class="col-xs-8 text-center">
       <div class="thumbnail ">
         <div class="caption">
-          <h1 class="goalheadline"><%= goal.name%></h1>
-          <h2>Distance: <%= goal.distance%> Miles</h2>
+          <h1 class="goalheadline"><%= goal.name %></h1>
+          <h2>Distance: <%= goal.distance %> Miles</h2>
           <% unless current_user.goal %>
           <br>
           <p><%= button_to "Make this your goal", goal_path(goal.id), method: :patch, class: 'btn btn-lg btn-primary btn-block', data: { no_turbolink: true } %></p>
