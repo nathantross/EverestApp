@@ -68,8 +68,8 @@ class UsersController < ApplicationController
 
     # returns a sum of the points we just made into an array
     completed = acc.inject do |sum, value|
-                  sum + value
-                end
+      sum + value
+    end
 
     # converts the sum into a percent of the total distance of the goal
     percent_done = ((completed * 100 / max_val)).to_i
