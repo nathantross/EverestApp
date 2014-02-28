@@ -30,9 +30,3 @@ users << User.create(name: "Nikki", email: "nikki@hotmail.com", uid: "2s5g3d6h",
 users << User.create(name: "Jessie", email: "jessie@example.gov", uid: "0l5k8d7f", goal_id: "3", avatar: "https://0.gravatar.com/avatar/2a0bb9f774f55d3210bbd0acf134f479?d=https%3A%2F%2Fidenticons.github.com%2F5d282931e9bf03e47c9b1ba157208a9a.png&r=x&s=440")
 users << User.create(name: "Joe", email: "joe@gmail.com", uid: "0r7v73nd", goal_id: "4", avatar: "https://2.gravatar.com/avatar/c16bff7ba3b6d55ccf9705d90b97ab5c?d=https%3A%2F%2Fidenticons.github.com%2F318f73335b30111b9024fb362c36a170.png&r=x&s=440")
 users << User.create(name: "Jane", email: "jane@gmail.com", uid: "0f73end7", goal_id: "1", avatar: "https://2.gravatar.com/avatar/c16bff7ba3b6d55ccf9705d90b97ab5c?d=https%3A%2F%2Fidenticons.github.com%2F318f73335b30111b9024fb362c36a170.png&r=x&s=440")
-
-
-
-
-
-
