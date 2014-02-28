@@ -1,6 +1,6 @@
 class MyLookupValidator < ActiveModel::Validator
   def validate(goal)
-    goal.errors[:name] << "Invalid lookup" if goal.distance.nil?
+    goal.errors[:name] << "is invalid" if goal.distance.nil?
   end
 end
 
