@@ -14,32 +14,32 @@ class GoalsController < ApplicationController
 
     query = params[:goal]
 
-    options = { "format" => "plaintext"} 
-    client = WolframAlpha::Client.new "WAH272-2G2QR5X7L6", options
-
-    @response = client.query query["name"]
-    result = @response.find { |pod| pod.id == "Result" }
-    if !result.nil?
-      answer = result.subpods.first.plaintext
-      @goal = Goal.new
-      @goal.name = query["name"]
-      @goal.input_interpretation = answer
-      @goal.distance = answer.to_f
- 
-      if answer.include? "miles"
-        @goal.save 
-        redirect_to goals_path, :notice => "Goal added!"
-      else
-        flash[:error]='This does not return a distance in miles. Try again.'
-        render :new
-      end
+    @goal = Goal.lookup(query[:name])
+    
+    if @goal.valid?
+      @goal.save 
+      redirect_to goals_path, :notice => "Goal added!"
     else
-      answer = nil
-      flash[:error] = "No answer. Please try again."
-      redirect_to new_goals_path
-    end
-  end
+       render :new
+    end  
 
+
+    # result_hash = Goal.get_goal_and_distance(query)
+ 
+    # if result_hash["distance"].include? "miles"
+    #   @goal.save 
+    #   redirect_to goals_path, :notice => "Goal added!"
+    # else
+    #   flash[:error]='This does not return a distance in miles. Try again.'
+    #   render :new
+    # end
+    
+    # if 
+    #   result_hash["distance"] == nil
+    #   flash[:error] = "No answer. Please try again."
+    #   redirect_to new_goals_path
+    # end
+  end
 
   def add
     # first two lines take the goal from the goals page and add it to a user's
