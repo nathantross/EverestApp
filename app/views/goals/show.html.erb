@@ -4,9 +4,14 @@
 
   <!-- Goal Information from Wolfram -->
   <div class="row">
-    <div class="col-xs-12 text-center">
-        <h1 class="headline">Your goal: <%= @goal.name%></h1>
+    <div class="col-xs-1 text-center">
+    </div>
+    <div class="col-xs-10 text-center">
+        <h1 class="subhead">Your goal</h1>
+        <h1 class="headline"><%= @goal.name%></h1>
         <h3>Distance: <%= @goal.distance%> miles</h3></br>
+    </div>
+    <div class="col-xs-1 text-center">
     </div>
   </div>
 
@@ -21,19 +26,27 @@
     </div>
   </div>
 
-  <!-- Morris Line Chart -->
-  <div id="goalarea" style="height: 400px; width: 100%;">
-  </div>
 
-  <!-- Morris Donut Chart -->
-  <div class="row">
+  <!-- Morris Charts -->
+  <div class="row"> 
     <div class="col-xs-1 text-center">
     </div>
     <div class="col-xs-10 text-center">
-      <div id="goaldonut" class="swap">
-      </div>
+
+    <!-- Morris Line Chart -->
+    <div class="text-center" id="goalarea">
     </div>
-    <div class="col-xs-1 text-center">
+
+    <!-- Morris Donut Chart -->
+    <div class="row">
+      <div class="col-xs-1 text-center">
+      </div>
+      <div class="col-xs-10 text-center">
+        <div id="goaldonut" class="swap">
+        </div>
+      </div>
+      <div class="col-xs-1 text-center">
+      </div>
     </div>
   </div>
 
