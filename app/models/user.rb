@@ -8,9 +8,6 @@ class User < ActiveRecord::Base
        user.provider = auth["provider"]
        user.uid = auth["uid"]
        user.name = auth["info"]["name"]
-
-       # Need to ask Rafi (or someone) about how to save properly
-       # as currently it gets stored as plaintext
        user.oauth_token = auth['credentials']['token']
        user.oauth_secret = auth['credentials']['secret']
     end
@@ -51,8 +48,5 @@ class User < ActiveRecord::Base
         max_val: max_val,
       }
   end
-
-
-
 end
       
