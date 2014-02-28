@@ -12,7 +12,9 @@ goals << Goal.create(name: "The English Channel", input_interpretation: "4836.0 
 goals << Goal.create(name: "New York/Los Angeles", input_interpretation: "2448.29 miles", distance: 2448.29)
 goals << Goal.create(name: "Earth/Moon", input_interpretation: "238900 miles", distance: 238900)
 goals << Goal.create(name: "The center of the Earth", input_interpretation: "3958.8 miles", distance: 3958.8)
-goals << Goal.create(name: "The Oregon Trail,", input_interpretation: "2000 miles", distance: 2000)
+goals << Goal.create(name: "The Oregon Trail", input_interpretation: "2000 miles", distance: 2000)
+goals << Goal.create(name: "San Francisco/Beijing", input_interpretation: "5918 miles", distance: 5918)
+
 
 users = []
 

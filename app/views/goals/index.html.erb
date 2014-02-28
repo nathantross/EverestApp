@@ -92,7 +92,7 @@
       <div class="thumbnail ">
         <div class="caption">
           <h1 class="goalheadline"><%= goal.name%></h1>
-          <h2>Distance: <%= goal.distance %></h2>
+          <h2>Distance: <%= goal.distance%> Miles</h2>
           <% unless current_user.goal %>
           <br>
           <p><%= button_to "Make this your goal", goal_path(goal.id), method: :patch, class: 'btn btn-lg btn-primary btn-block', data: { no_turbolink: true } %></p>
