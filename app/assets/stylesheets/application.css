@@ -97,8 +97,7 @@
   width: 20px;
   padding-bottom: 5px;
   opacity: 0.8;
-
-  content:url(everest_logo_pink.png);
+  content:url(public/images/everest_logo_pink.png);
 }
 
 /* User's Profile Image in Nav */
