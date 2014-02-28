@@ -11,9 +11,7 @@ class GoalsController < ApplicationController
   end
 
   def create
-
     query = params[:goal]
-
     options = { "format" => "plaintext"} 
     client = WolframAlpha::Client.new "WAH272-2G2QR5X7L6", options
 
@@ -30,13 +28,7 @@ class GoalsController < ApplicationController
         @goal.save
         add_goal_to_current_user(@goal)
 
-
-
-
-
-#redirect to index page w/ the goal listed under user's goal
-
-
+        #redirect to index page w/ the goal listed under user's goal
         redirect_to goals_path, :notice => "Goal added!"
       else
         flash[:error]='This does not return a distance in miles. Try again.'
@@ -49,11 +41,10 @@ class GoalsController < ApplicationController
     end
   end
 
-
   def add
-    # first two lines take the goal from the goals page and add it to a user's
-    # goal. Currently we have one goal per user at a time.
+    # Currently we have one goal per user at a time.
     new_goal = Goal.find(params[:id])
+
     add_goal_to_current_user(new_goal)
 
     redirect_to user_path(current_user.id), :notice => "Goal added!"
@@ -64,6 +55,7 @@ class GoalsController < ApplicationController
   end
 
 protected
+  
   #add the goal to the user
   def add_goal_to_current_user(goal)
     current_user.goal = goal
