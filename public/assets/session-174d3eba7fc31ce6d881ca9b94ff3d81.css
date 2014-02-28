@@ -1,0 +1,33 @@
+
+/* Fitbit Connect Button */
+
+
+.fitbitLogo {
+  background: url(fitbit_connect.png) no-repeat;
+  opacity: 0.92;
+  padding-left: 141px;
+  padding-right: 141px;
+  margin-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.fitbitLogo:hover {
+
+  opacity: 1;
+  padding-left: 141px;
+  padding-right: 141px;
+  margin-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.fitbitLogo:active {
+
+  opacity: 0.95;
+  padding-left: 141px;
+  padding-right: 141px;
+  margin-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+}
