@@ -17,6 +17,7 @@ class GoalsController < ApplicationController
     
     if @goal.valid?
       @goal.save 
+      #this calls the add_goal_to_current_user function
       add_goal_to_current_user(@goal)
       redirect_to goals_path, :notice => "Goal added!"
     else
