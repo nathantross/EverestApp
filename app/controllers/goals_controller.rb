@@ -47,7 +47,7 @@ class GoalsController < ApplicationController
 
     add_goal_to_current_user(new_goal)
 
-    redirect_to user_path(current_user.id), :notice => "Goal added!"
+    redirect_to goals_path, :notice => "Goal added!"
   end  
 
   def show
