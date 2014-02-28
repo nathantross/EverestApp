@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     current_user.start_date = DateTime.now.strftime("%Y-%m-%d")
     User.find(current_user.id).update_attributes(:start_date => current_user.start_date)
 
-    redirect_to user_path(current_user.id), :notice => "Goal restarted, good luck!"
+    redirect_to goal_path(current_user.goal_id), :notice => "Goal restarted, good luck!"
   end
 
   def quit
