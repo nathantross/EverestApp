@@ -13,7 +13,7 @@ class GoalsController < ApplicationController
   def create
     query = params[:goal]
     options = { "format" => "plaintext"} 
-    client = WolframAlpha::Client.new "WAH272-2G2QR5X7L6", options
+    client = WolframAlpha::Client.new "WAH272-35YHWUVXRT", options
 
     @response = client.query query["name"]
     result = @response.find { |pod| pod.id == "Result" }
