@@ -27,7 +27,16 @@ class GoalsController < ApplicationController
       @goal.distance = answer.to_f
  
       if answer.include? "miles"
-        @goal.save 
+        @goal.save
+        add_goal_to_current_user(@goal)
+
+
+
+
+
+#redirect to index page w/ the goal listed under user's goal
+
+
         redirect_to goals_path, :notice => "Goal added!"
       else
         flash[:error]='This does not return a distance in miles. Try again.'
@@ -45,12 +54,7 @@ class GoalsController < ApplicationController
     # first two lines take the goal from the goals page and add it to a user's
     # goal. Currently we have one goal per user at a time.
     new_goal = Goal.find(params[:id])
-    current_user.goal = new_goal
-    
-    # Sets a start for the goal corresponding to the same day they
-    # add it to their goal. The format is stringified to YYYY-MM-DD
-    current_user.start_date = DateTime.now.strftime("%Y-%m-%d")
-    User.find(current_user.id).update_attributes(:goal => current_user.goal, :start_date => current_user.start_date)
+    add_goal_to_current_user(new_goal)
 
     redirect_to user_path(current_user.id), :notice => "Goal added!"
   end  
@@ -58,4 +62,19 @@ class GoalsController < ApplicationController
   def show
     @goal = Goal.find(params[:id])
   end
+
+protected
+  #add the goal to the user
+  def add_goal_to_current_user(goal)
+    current_user.goal = goal
+        # Sets a start for the goal corresponding to the same day they
+        # add it to their goal. The format is stringified to YYYY-MM-DD
+    current_user.start_date = DateTime.now.strftime("%Y-%m-%d")
+
+    User.find(current_user.id).update_attributes(
+      :goal => current_user.goal, :start_date => current_user.start_date
+    )
+  end
 end
+
+

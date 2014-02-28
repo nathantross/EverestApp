@@ -116,7 +116,7 @@
           <h1 class="goalheadline"><%= goal.name%></h1>
           <h2>Distance: <%= goal.distance %></h2>
           <% unless current_user.goal %>
-          <p><%= button_to "Add this as your goal", goal_path(goal.id), method: :patch, class: 'btn btn-primary btn-lg default', data: { no_turbolink: true } %></p>
+          <p><%= button_to "Add this as your goal", add_path(goal.id), method: :patch, class: 'btn btn-primary btn-lg default', data: { no_turbolink: true } %></p>
           <% end %>
         </div>
       </div>
