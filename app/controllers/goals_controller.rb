@@ -28,7 +28,7 @@ class GoalsController < ApplicationController
  
       if answer.include? "miles"
         @goal.save 
-        render :show
+        redirect_to goals_path, :notice => "Goal added!"
       else
         flash[:error]='This does not return a distance in miles. Try again.'
         render :new
@@ -36,14 +36,8 @@ class GoalsController < ApplicationController
     else
       answer = nil
       flash[:error] = "No answer. Please try again."
-      redirect_to new_goal_path
+      redirect_to new_goals_path
     end
-
-    @goal = Goal.new
-    @goal.name = query["name"]
-    @goal.input_interpretation = answer
-    @goal.distance = answer.to_f
-    @goal.save
   end
 
 

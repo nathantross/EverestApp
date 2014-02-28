@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 
     User.find(current_user.id).update_attributes(:goal => current_user.goal, :start_date => current_user.start_date)
 
-    redirect_to user_path(current_user.id), :notice => "Time to pick another goal?"
+    redirect_to goals_path, :notice => "Time to pick another goal?"
   end
 
   # method to provide json data for graphing
