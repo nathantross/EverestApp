@@ -67,7 +67,7 @@
 
 
 
-<!-- section three -->
+<!-- Other Goals Not Owned by User -->
   <div class="row">
     <div class="col-xs-2">
     </div>
@@ -82,7 +82,7 @@
   </div>
 
     
-
+  <!-- If user has goal, unable to add other goals -->
   <% @goals.each do |goal| %>
     <% unless goal == current_user.goal %>
       <div class="row">
@@ -106,10 +106,6 @@
     </div>
     <%end%>
   <% end %>
-
-
-
-
 
 </div>
 
