@@ -1,86 +1,63 @@
 <%= render 'layouts/navbar' %>
-<br>
-<br>
-<br>
-<br>
 
 <div class="container">
-
-<h1 class="headline text-center">The Goals Wall</h1>
-
+  <!-- Headline Row -->
   <div class="row">
     <div class="col-xs-12">
+      <h1 class="headline text-center">The Goals Wall</h1>
     </div>
   </div>
 
+  <!-- Your Goals Row -->
+  <!-- If Current User has a goal -->
+  <% if current_user.goal %>
+    <div class="row">
+      <div class="col-xs-2">
+      </div>
 
-  <div class="row">
-    <div class="col-xs-2">
-    </div>
-<% if current_user.goal %>
-    <div class="col-xs-8">
-      <h1>Your Goal</h1>
-      <hr>
-    </div>
-
-    <div class="col-xs-2">
-    </div>
-
-  </div>
-
-<!-- section 1 -->
-
-  <div class="row">
-    <div class="col-xs-2">
-    </div>
-
-    <div class="col-xs-5">
-      <h3><%=current_user.goal.name%></h3>
-      <h3 class="fa fa-sun-o fa-2x"><%=current_user.goal.distance%> miles</h3>
+          <div class="col-xs-8 text-center">
+            <h1>Your Goal</h1>
+            <div class="thumbnail ">
+              <div class="caption">
+                <h1 class="goalheadline"><%=current_user.goal.name%></h1>
+                <h2><%=current_user.goal.distance%> Miles</h2>
+                <br>
+                <p><%= link_to "View Your Goal", goal_path(current_user.goal_id) ,class: "btn btn-lg btn-primary btn-block", data: { no_turbolink: true } %></p>
+              </div>
+            </div>
+          </div>
+      <div class="col-xs-2">
+      </div>
     </div>
 
 
-    <div class="col-xs-3">
-      <%= link_to "View Stats", goal_path(current_user.goal_id) ,class: "btn grow btn-primary", data: { no_turbolink: true } %>
+<!-- If Current User does not have a goal -->
+  <% else%>
+    <div class="row">
+      <div class="col-xs-2">
+      </div>
+
+      <div class="col-xs-8 text-center">
+        <div class="thumbnail ">
+            <div class="caption">
+              <br>
+              <br>
+              <br>
+              <p><%= link_to "Make a New Goal", "/goals/new", class: "btn btn-lg btn-primary" %></p>
+              <br>
+              <br>
+              <br>
+            </div>
+          </div>
+      </div>
+
+      <div class="col-xs-2">
+      </div>
     </div>
 
-    <div class="col-xs-2">
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-xs-2">
-    </div>
-
-    <div class="col-xs-8">
-      <hr>
-    </div>
-
-    <div class="col-xs-2">
-    </div>
-  </div>
-
-
-<!-- section 2 -->
-<% else%>
-  <div class="row">
-    <div class="col-xs-2">
-    </div>
-
-    <div class="col-xs-3">
-      <%= link_to "Make a New Goal", "/goals/new", class: "btn grow btn-primary" %>
-    </div>
-
-    <div class="col-xs-2">
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-xs-0">
-    </div>
-
-    <div class="col-xs-12">
-      <hr>
+    <div class="row">
+      <div class="col-xs-12">
+      </div>
     </div>
 
     <div class="col-xs-0">
@@ -88,14 +65,17 @@
   </div>
 <%end%>
 
+  <%end%>
+
+
 
 <!-- section three -->
   <div class="row">
     <div class="col-xs-2">
     </div>
 
-    <div class="col-xs-8">
-      <h1 class="headline text-center">Other Amazing Goals</h1>
+    <div class="col-xs-8 text-center">
+      <h1>Other Amazing Goals</h1>
     </div>
 
     <div class="col-xs-2">
@@ -116,7 +96,8 @@
           <h1 class="goalheadline"><%= goal.name%></h1>
           <h2>Distance: <%= goal.distance %></h2>
           <% unless current_user.goal %>
-          <p><%= button_to "Add this as your goal", goal_path(goal.id), method: :patch, class: 'btn btn-primary btn-lg default', data: { no_turbolink: true } %></p>
+          <br>
+          <p><%= button_to "Make this your goal", goal_path(goal.id), method: :patch, class: 'btn btn-lg btn-primary btn-block', data: { no_turbolink: true } %></p>
           <% end %>
         </div>
       </div>
