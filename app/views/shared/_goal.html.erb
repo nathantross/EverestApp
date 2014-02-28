@@ -10,13 +10,11 @@
 
       <% if @goal.errors.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(@goal.errors.count, "error") %> prohibited this goal from being saved:</h2>
- 
-        <ul>
+        <h3 class="text-center"><%= pluralize(@goal.errors.count, "error") %> prohibited this goal from being saved</h3>
+
           <% @goal.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
+            <p class="text-center"><%= msg %></p>
           <% end %>
-        </ul>
       </div>
       <% end %>
           
