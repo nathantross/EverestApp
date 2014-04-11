@@ -14,6 +14,6 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d8ebff', endColorstr='#aad4ff',GradientType=0 ); /* IE6-9 */
   background: url(grunge.png) repeat;
   background-color: rgba(184, 219, 255, 1);
-  padding-top: 80px;
+  
 
 }
