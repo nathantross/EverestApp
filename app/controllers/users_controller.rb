@@ -34,8 +34,8 @@ class UsersController < ApplicationController
     # adds previous points to each subsequent point
     progress = 0
     run_points.map do |point|
-      progress += point['value'].to_f  
-      point['value'] = progress
+      progress += point['value'].to_f
+      point['value'] = progress.round(2)
     end 
     
     # the high point of the graph, which corresponds to the 
