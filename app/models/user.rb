@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
       # adds previous points to each subsequent point
       progress = 0
       run_points.map do |point|
-        progress += point['value'].to_f  
+        progress += point['value'].to_f
         point['value'] = progress
       end 
       

@@ -1,5 +1,5 @@
 class ContactUsMailer < ActionMailer::Base
-  default from: "http://salty-brook-3000.herokuapp.com/contact"
+  default from: "http://everestapp.herokuapp.com/contact"
   default to: "Ryabrandt@gmail.com, eganae@gmail.com, nathantross@gmail.com, arweiner@alumni.stanford.edu"
 
   def contact_us_email(contact)
