@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
   helper_method :avatar
   helper_method :climb
   helper_method :plot_time
+  helper_method :empire_state
 
   # creates a call to the Fitgem client and associates it with
   # a particular user in session
@@ -34,13 +35,27 @@ class ApplicationController < ActionController::Base
 
   # gets the profile picture from fitbit
   def avatar
+    
     @avatar = fitgem_info.user_info['user']['avatar']
 
   end
 
   # calculates the total feet climbed as recorded by fitbit. One floor is ten feet.
   def climb
-    @climb = fitgem_info.activity_statistics['lifetime']['tracker']['floors'] * 10
+    climb_info = fitgem_info.activity_statistics['lifetime']['tracker']['floors']
+    if climb_info.nil?
+      "No floors climbed!"
+    else
+      @climb = climb_info * 10
+    end
+  end
+
+  def empire_state
+    if climb.class == String
+      @empire_state = 0
+    else 
+      @empire_state = climb / 1250
+    end
   end
 
   private
