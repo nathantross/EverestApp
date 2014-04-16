@@ -2,7 +2,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: going_the_distance_dev
+  database: everestapp_dev
   pool: 5
 
 # Warning: The database defined as "test" will be erased and
@@ -11,11 +11,11 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: going_the_distance_test
+  database: everestapp_test
   pool: 5
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: going_the_distance
+  database: everestapp
   pool: 5

@@ -7,8 +7,6 @@ class SessionsController < ApplicationController
 
   def create
     auth = request.env["omniauth.auth"]
-    binding.pry
-
     user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
     if user == User.find_by_provider_and_uid(auth["provider"], auth["uid"])
       user.update(oauth_token: auth['credentials']['token'], oauth_secret: auth['credentials']['secret'])

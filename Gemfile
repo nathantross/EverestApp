@@ -35,11 +35,12 @@ group :production do
 end
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'pry'
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'rspec-rails'
-  gem 'dotenv-rails'
+  
   gem 'factory_girl_rails'
   gem 'quiet_assets'
   gem 'better_errors'
