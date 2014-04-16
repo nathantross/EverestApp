@@ -23,8 +23,10 @@ class ApplicationController < ActionController::Base
   # at today. tracker/distance is only what the fitbit records (not user inputted data) 
   # for total walk/run distance.
   def plot_time
-    unless current_user.start_date.nil?
-      @plot_time = fitgem_info.activity_on_date_range("tracker/distance", current_user.start_date, 'today')
+    if current_user
+      unless current_user.start_date.nil?
+        @plot_time = fitgem_info.activity_on_date_range("tracker/distance", current_user.start_date, 'today')
+      end
     end
   end
 
